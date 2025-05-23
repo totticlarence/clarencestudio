@@ -1,1 +1,199 @@
+/* style.css */
 
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0e0e0e;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #121212;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #1da1f2;
+}
+
+.socials a {
+  margin-left: 10px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+.banner {
+  background: url('banner.jpg') no-repeat center center/cover;
+  text-align: center;
+  padding: 100px 20px;
+  background-size: cover;
+}
+
+.banner h1 {
+  font-size: 3em;
+  animation: fadeIn 2s;
+}
+
+.banner p {
+  font-size: 1.2em;
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.carousel {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.carousel h2 {
+  margin-bottom: 30px;
+}
+
+.carousel-inner {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #1c1c1c;
+  padding: 20px;
+  width: 280px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.05);
+  transition: transform 0.3s, opacity 0.3s;
+  display: none;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background-color: #222;
+}
+
+.counters {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: #141414;
+  padding: 30px;
+  font-size: 1.2em;
+}
+
+.counter span {
+  font-size: 2em;
+  font-weight: bold;
+  color: #1da1f2;
+}
+
+.tarifs {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.tarif-bloc {
+  background: #1b1b1b;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+.tarif-bloc i {
+  font-size: 2rem;
+  color: #1da1f2;
+  margin-bottom: 10px;
+}
+
+.contact {
+  background: #111;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+}
+
+.contact button {
+  background: #1da1f2;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+footer {
+  background: #0a0a0a;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #1da1f2;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-inner {
+    flex-direction: column;
+  }
+  .hamburger {
+    display: block;
+    font-size: 1.5rem;
+  }
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background: #121212;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+  }
+}
