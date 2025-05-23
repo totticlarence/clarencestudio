@@ -1,123 +1,265 @@
-<!DOCTYPE html><html lang="fr"><head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Totti Clarence - Accueil</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!DOCTYPE html><html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Totti Clarence</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; }
-    header, footer { background: #000; padding: 1rem; }
-    header { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-    nav { display: flex; gap: 1rem; }
-    .hamburger { display: none; }
-    .banner { background: url('banner.jpg') no-repeat center center/cover; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 2rem; font-weight: bold; }
-    .section { padding: 3rem 1rem; text-align: center; }
-    .card-container { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; transition: opacity 1s ease-in-out; opacity: 1; }
-    .card { background: #222; padding: 1rem; border-radius: 1rem; width: 300px; }
-    .fade-out { opacity: 0; }
-    .tarif-card { text-align: center; padding: 1rem; margin: 1rem auto; background: #1c1c1c; border-radius: 1rem; width: 80%; }
-    .counter-container { display: flex; justify-content: center; gap: 2rem; font-size: 1.5rem; margin-bottom: 2rem; }
-    .portfolio { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-    .portfolio img { width: 300px; border-radius: 10px; }
-    footer { text-align: center; font-size: 0.9rem; background: #000; padding: 2rem; }
-    footer .socials a { margin: 0 1rem; color: #fff; font-size: 1.2rem; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background: #000;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo { font-size: 1.5em; font-weight: bold; }
+    nav {
+      display: flex;
+      gap: 1.5em;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    .social-icons a {
+      margin-left: 1em;
+      color: white;
+    }
+    .banner {
+      background: url('https://via.placeholder.com/1600x600') center/cover;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .banner h1 {
+      font-size: 3em;
+      background: rgba(0,0,0,0.6);
+      padding: 1em;
+    }
+    .section {
+      padding: 4em 2em;
+      text-align: center;
+    }
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      margin-top: 2em;
+    }
+    .card {
+      background: #1c1c1c;
+      border-radius: 1em;
+      padding: 2em;
+      transition: transform 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 1s ease;
+    }
+    .icon {
+      font-size: 2em;
+      color: #0af;
+      margin-bottom: 1em;
+    }
+    .counters {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background: #000;
+      padding: 3em 1em;
+    }
+    .counter-box {
+      flex: 1;
+      min-width: 200px;
+      padding: 1em;
+      text-align: center;
+    }
+    .counter-number {
+      font-size: 2.5em;
+      color: #0af;
+    }
+    .portfolio {
+      background: #1a1a1a;
+    }
+    .footer {
+      background: #000;
+      color: #ccc;
+      padding: 2em;
+      text-align: center;
+    }
+    .footer a {
+      color: #0af;
+      margin: 0 0.5em;
+    }
+    .tarifs .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact-form {
+      display: grid;
+      gap: 1em;
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 1em;
+      border: none;
+      border-radius: 0.5em;
+    }
+    .hamburger {
+      display: none;
+    }
     @media (max-width: 768px) {
-      .hamburger { display: block; }
-      nav { display: none; }
+      .hamburger {
+        display: block;
+        color: white;
+        font-size: 1.5em;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+      }
+      nav.active {
+        display: flex;
+      }
     }
   </style>
-</head><body>
+</head>
+<body>
   <header>
-    <div><strong>Totti Clarence</strong></div>
-    <nav>
-      <a href="#">Accueil</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#secteurs">Nos secteurs</a>
-      <a href="#services">Nos services</a>
+    <div class="logo">Totti Clarence</div>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <nav id="nav">
+      <a href="#services">Services</a>
+      <a href="#secteurs">Secteurs</a>
       <a href="#tarifs">Tarifs</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
+      <div class="social-icons">
+        <a href="https://tiktok.com/@arencelyrics" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://youtube.com/@totti_clarence" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
     </nav>
-    <div class="hamburger">☰</div>
-    <div class="socials">
-      <a href="https://tiktok.com/@arencelyrics"><i class="fab fa-tiktok"></i></a>
-      <a href="https://youtube.com/@totti_clarence"><i class="fab fa-youtube"></i></a>
-    </div>
-  </header>  <div class="banner">Bienvenue chez Totti Clarence</div>  <section id="portfolio" class="section">
-    <h2>Portfolio</h2>
-    <div class="portfolio">
-      <img src="img1.jpg" alt="Projet 1">
-      <img src="img2.jpg" alt="Projet 2">
-      <img src="img3.jpg" alt="Projet 3">
-    </div>
+  </header>  <section class="banner">
+    <h1>Bienvenue chez Totti Clarence</h1>
   </section>  <section id="secteurs" class="section">
-    <h2>Nos secteurs</h2>
-    <div id="secteurs-container" class="card-container"></div>
-  </section>  <section class="section counter-container">
-    <div><strong>+ de 200</strong><br>Réalisations</div>
-    <div><strong>+ de 50</strong><br>Partenaires</div>
-    <div><strong>+ de 100</strong><br>Artistes aidés</div>
+    <h2>Nos Secteurs</h2>
+    <div class="cards-container" id="secteurs-cards"></div>
   </section>  <section id="services" class="section">
-    <h2>Nos services</h2>
-    <div id="services-container" class="card-container"></div>
-  </section>  <section id="tarifs" class="section">
-    <h2>Nos tarifs</h2>
-    <div class="tarif-card"><i class="fas fa-microphone"></i><br>Dédicace personnalisée : à partir de 2 000 FCFA</div>
-    <div class="tarif-card"><i class="fas fa-music"></i><br>Clip lyrics format court : à partir de 2 000 FCFA</div>
-    <div class="tarif-card"><i class="fas fa-video"></i><br>Clip lyrics format long : à partir de 10 000 FCFA</div>
+    <h2>Nos Services</h2>
+    <div class="cards-container" id="services-cards"></div>
+  </section>  <section class="counters">
+    <div class="counter-box">
+      <div class="counter-number" data-count="87">0</div>
+      <p>Réalisations</p>
+    </div>
+    <div class="counter-box">
+      <div class="counter-number" data-count="34">0</div>
+      <p>Partenaires</p>
+    </div>
+    <div class="counter-box">
+      <div class="counter-number" data-count="76">0</div>
+      <p>Artistes aidés</p>
+    </div>
+  </section>  <section id="portfolio" class="section portfolio">
+    <h2>Portfolio</h2>
+    <p>Bientôt disponible : nos plus belles créations</p>
+  </section>  <section id="tarifs" class="section tarifs">
+    <h2>Nos Tarifs</h2>
+    <div class="cards-container">
+      <div class="card"><div class="icon"><i class="fas fa-microphone"></i></div><h3>Dédicace Basique</h3><p>2 000 FCFA</p></div>
+      <div class="card"><div class="icon"><i class="fas fa-music"></i></div><h3>Clip Lyrics Court Premium</h3><p>6 000 FCFA</p></div>
+      <div class="card"><div class="icon"><i class="fas fa-video"></i></div><h3>Clip Lyrics Long Engagé</h3><p>25 000 FCFA</p></div>
+    </div>
   </section>  <section id="contact" class="section">
     <h2>Contact</h2>
-    <form style="max-width: 500px; margin: auto;">
-      <input type="text" placeholder="Nom" style="width: 100%; margin: 0.5rem 0;"><br>
-      <input type="email" placeholder="Email" style="width: 100%; margin: 0.5rem 0;"><br>
-      <textarea placeholder="Message" style="width: 100%; margin: 0.5rem 0;"></textarea><br>
+    <form class="contact-form">
+      <input type="text" placeholder="Nom">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Message"></textarea>
       <button type="submit">Envoyer</button>
     </form>
-    <p>Email : contact@arencelyrics.com</p>
-    <p>Téléphone : +241 74 00 00 00</p>
-  </section>  <footer>
-    <p>&copy; 2025 Totti Clarence. Tous droits réservés.</p>
-    <div class="socials">
-      <a href="https://tiktok.com/@arencelyrics"><i class="fab fa-tiktok"></i></a>
-      <a href="https://youtube.com/@totti_clarence"><i class="fab fa-youtube"></i></a>
-    </div>
+  </section>  <footer class="footer">
+    <p>&copy; 2025 Totti Clarence - Tous droits réservés</p>
+    <p>
+      <a href="#">Mentions légales</a> |
+      <a href="#">Politique de confidentialité</a>
+    </p>
   </footer>  <script>
-    const secteurs = [
-      'Audiovisuel et production',
-      'Marketing musical',
-      'Lancement d’artistes',
-      'Formation & coaching',
-      'Relations presse',
-      'Conseil en image'
-    ];
-    const services = [
-      'Clips lyrics animés',
-      'TikToks / Shorts / Reels',
-      'Boost via nos pages',
-      'Covers officielles',
-      'Dédicaces personnalisées',
-      'Mise en avant boutique'
-    ];
-
-    function createCards(containerId, data) {
-      const container = document.getElementById(containerId);
-      let index = 0;
-      function updateCards() {
-        container.classList.add('fade-out');
-        setTimeout(() => {
-          container.innerHTML = '';
-          data.slice(index, index + 3).forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.textContent = item;
-            container.appendChild(card);
-          });
-          container.classList.remove('fade-out');
-          index = (index + 3) % data.length;
-        }, 500);
-      }
-      updateCards();
-      setInterval(updateCards, 5000);
+    function toggleMenu() {
+      document.getElementById('nav').classList.toggle('active');
     }
 
-    createCards('secteurs-container', secteurs);
-    createCards('services-container', services);
-  </script></body></html>
+    const services = [
+      { icon: 'fas fa-headphones', title: 'Mixage Audio', desc: 'Optimisation professionnelle du son.' },
+      { icon: 'fas fa-film', title: 'Clips Lyrics', desc: 'Montage vidéo avec paroles animées.' },
+      { icon: 'fas fa-paint-brush', title: 'Covers Design', desc: 'Visuels artistiques pour vos morceaux.' },
+      { icon: 'fas fa-bullhorn', title: 'Boost Réseaux', desc: 'Promotion via notre réseau.' },
+      { icon: 'fas fa-star', title: 'Dédicaces', desc: 'Messages personnalisés pour vos fans.' },
+      { icon: 'fas fa-store', title: 'Mise en avant', desc: 'Mettez en avant vos articles ou projets.' }
+    ];
+
+    const secteurs = [
+      { icon: 'fas fa-globe', title: 'Digital', desc: 'Communication et diffusion numérique.' },
+      { icon: 'fas fa-lightbulb', title: 'Création', desc: 'Idéation et branding de projets.' },
+      { icon: 'fas fa-chart-line', title: 'Marketing', desc: 'Stratégies de visibilité efficaces.' },
+      { icon: 'fas fa-photo-video', title: 'Audiovisuel', desc: 'Réalisation de contenus dynamiques.' },
+      { icon: 'fas fa-people-group', title: 'Accompagnement', desc: 'Support aux jeunes artistes.' },
+      { icon: 'fas fa-newspaper', title: 'Rédaction', desc: 'Articles et contenu optimisé.' }
+    ];
+
+    function displayCards(containerId, data, index = 0) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      const slice = data.slice(index, index + 3);
+      slice.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `<div class="icon"><i class="${item.icon}"></i></div><h3>${item.title}</h3><p>${item.desc}</p>`;
+        container.appendChild(card);
+      });
+      setTimeout(() => {
+        [...container.children].forEach(c => c.classList.add('visible'));
+      }, 100);
+      setTimeout(() => {
+        [...container.children].forEach(c => c.classList.remove('visible'));
+        displayCards(containerId, data, (index + 3) % data.length);
+      }, 5000);
+    }
+    displayCards('services-cards', services);
+    displayCards('secteurs-cards', secteurs);
+
+    // Compteur
+    const counters = document.querySelectorAll('.counter-number');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-count');
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / 100);
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 50);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  </script></body>
+  </html>
