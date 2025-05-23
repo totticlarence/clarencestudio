@@ -1,64 +1,143 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Totti Clarence | Accueil</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Totti Clarence</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .bar {
-      transition: all 0.3s ease-in-out;
-    }
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #111; color: #fff; }
+    header { background: rgba(0,0,0,0.9); padding: 1rem 2rem; position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+    header nav a { color: #fff; margin: 0 1rem; text-decoration: none; }
+    .hero { background: url('https://source.unsplash.com/1600x600/?media,studio') no-repeat center/cover; padding: 10rem 2rem 5rem; text-align: center; }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero a { padding: 0.7rem 1.5rem; background: #007bff; color: #fff; border-radius: 5px; text-decoration: none; }
+
+    .section { padding: 5rem 2rem; max-width: 1200px; margin: auto; }
+    .section h2 { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .card { background: #222; border-radius: 10px; padding: 2rem; transition: 0.3s; }
+    .card:hover { background: #333; }
+    .card i { font-size: 2rem; margin-bottom: 1rem; color: #007bff; }
+
+    .tarifs-table { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+    .tarif { background: #1c1c1c; padding: 2rem; border-radius: 8px; width: 280px; border: 1px solid #333; }
+    .tarif h3 { color: #007bff; }
+    .tarif ul { list-style: none; padding: 0; }
+    .tarif ul li { margin: 0.5rem 0; }
+
+    .temoignages { display: flex; overflow-x: auto; gap: 1rem; }
+    .temoin { background: #1e1e1e; padding: 2rem; min-width: 280px; border-radius: 10px; flex-shrink: 0; }
+    .temoin p { font-style: italic; }
+
+    .portfolio { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+    .portfolio img { width: 100%; border-radius: 10px; }
+
+    footer { background: #000; padding: 2rem; text-align: center; color: #aaa; }
+    footer a { color: #007bff; margin: 0 0.5rem; text-decoration: none; }
   </style>
 </head>
-<body class="bg-black text-white font-sans">
-  <!-- Header -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-sm shadow-md">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-white">Totti Clarence</h1>
-      <!-- Bouton menu burger -->
-      <button id="menuBtn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 relative z-50">
-        <span class="bar bg-white w-6 h-0.5 mb-1"></span>
-        <span class="bar bg-white w-6 h-0.5 mb-1"></span>
-        <span class="bar bg-white w-6 h-0.5"></span>
-      </button>
-      <!-- Navigation desktop -->
-      <nav class="space-x-6 hidden md:flex text-white">
-        <a href="#accueil" class="hover:text-blue-400">Accueil</a>
-        <a href="#a-propos" class="hover:text-blue-400">À propos</a>
-        <a href="#secteurs" class="hover:text-blue-400">Nos secteurs</a>
-        <a href="#services" class="hover:text-blue-400">Services</a>
-        <a href="#portfolio" class="hover:text-blue-400">Portfolio</a>
-        <a href="#tarifs" class="hover:text-blue-400">Tarifs</a>
-        <a href="#contact" class="hover:text-blue-400">Contact</a>
-      </nav>
-      <div class="hidden md:flex space-x-4">
-        <a href="https://tiktok.com/@arencelyrics" target="_blank"><i class="fab fa-tiktok text-xl text-white hover:text-pink-500"></i></a>
-        <a href="https://youtube.com/@totti_clarence" target="_blank"><i class="fab fa-youtube text-xl text-white hover:text-red-500"></i></a>
-      </div>
-    </div>
-    <!-- Menu mobile -->
-    <div id="mobileMenu" class="md:hidden px-6 pb-4 hidden flex-col space-y-2 text-white">
-      <a href="#accueil" class="block hover:text-blue-400">Accueil</a>
-      <a href="#a-propos" class="block hover:text-blue-400">À propos</a>
-      <a href="#secteurs" class="block hover:text-blue-400">Nos secteurs</a>
-      <a href="#services" class="block hover:text-blue-400">Services</a>
-      <a href="#portfolio" class="block hover:text-blue-400">Portfolio</a>
-      <a href="#tarifs" class="block hover:text-blue-400">Tarifs</a>
-      <a href="#contact" class="block hover:text-blue-400">Contact</a>
-    </div>
-  </header>
+<body>
 
-  <!-- À ajouter ensuite :
-    - Bannière
-    - Carousel fade de 3 cartes sur 5s
-    - Compteurs dynamiques
-    - Portfolio
-    - Section tarifs centrée avec icônes
-    - Page contact étoffée
-    - Pied de page professionnel
-  -->
+<header>
+  <div><strong>Totti Clarence</strong></div>
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#secteurs">Secteurs</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#temoignages">Témoignages</a>
+    <a href="#portfolio">Portfolio</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Bienvenue chez Totti Clarence</h1>
+  <a href="#secteurs">Découvrir nos services</a>
+</section>
+
+<section id="secteurs" class="section">
+  <h2>Nos Secteurs</h2>
+  <div class="cards">
+    <div class="card">
+      <i class="fas fa-video"></i>
+      <h3>Production Vidéo</h3>
+      <p>Clips lyrics, vidéos pro, TikTok/Shorts pour artistes et marques.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-music"></i>
+      <h3>Musique & Audio</h3>
+      <p>Design sonore, enregistrement voix-off, soundtracks et plus.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-bullhorn"></i>
+      <h3>Promotion</h3>
+      <p>Boost musique, visuels de covers, campagnes sur réseaux sociaux.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs" class="section">
+  <h2>Nos Tarifs</h2>
+  <div class="tarifs-table">
+    <div class="tarif">
+      <h3>Dédicace Basique</h3>
+      <p><strong>2 000 FCFA</strong></p>
+      <ul>
+        <li>Message simple</li>
+        <li>Choix de chanson</li>
+      </ul>
+    </div>
+    <div class="tarif">
+      <h3>Clip Lyrics - Starter</h3>
+      <p><strong>2 000 FCFA</strong></p>
+      <ul>
+        <li>Format court</li>
+        <li>Montage simple</li>
+      </ul>
+    </div>
+    <div class="tarif">
+      <h3>Clip Lyrics - Engagé</h3>
+      <p><strong>25 000 FCFA</strong></p>
+      <ul>
+        <li>Professionnel</li>
+        <li>Artistes confirmés</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="temoignages" class="section">
+  <h2>Témoignages</h2>
+  <div class="temoignages">
+    <div class="temoin">
+      <p>"Service rapide et clip de qualité. Je recommande !" – Dany M</p>
+    </div>
+    <div class="temoin">
+      <p>"Mon clip lyrics a boosté ma visibilité en ligne. Merci Clarence !"</p>
+    </div>
+    <div class="temoin">
+      <p>"Professionnalisme, rapidité et créativité. Au top."</p>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="section">
+  <h2>Réalisations</h2>
+  <div class="portfolio">
+    <img src="https://source.unsplash.com/400x250/?video,studio" alt="Projet 1">
+    <img src="https://source.unsplash.com/400x250/?music,clip" alt="Projet 2">
+    <img src="https://source.unsplash.com/400x250/?camera,edit" alt="Projet 3">
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Totti Clarence. Tous droits réservés.</p>
+  <div>
+    <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
 </body>
   </html>
-  
