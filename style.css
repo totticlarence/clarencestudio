@@ -1,14 +1,13 @@
 .tarif-card {
-  background: #0f0f0f;
+  background: #111827;
   padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
 }
 .tarif-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
-
 .tarif-card h4 {
   font-size: 1.3rem;
   font-weight: bold;
@@ -17,31 +16,41 @@
 .tarif-card .price {
   font-size: 1.1rem;
   margin-bottom: 1rem;
-  color: #00bcd4;
+  color: #60a5fa;
 }
 .tarif-card ul {
   list-style: none;
   padding: 0;
+  text-align: left;
 }
 .tarif-card li {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 0.5rem;
+  gap: 10px;
+  margin-bottom: 8px;
   font-size: 0.95rem;
 }
-.valid::before {
-  content: '✔';
-  color: #4ade80;
-}
-.invalid::before {
-  content: '✘';
-  color: #f87171;
-}
+.valid i { color: #4ade80; }
+.invalid i { color: #f87171; }
 
 .recommended {
   border: 2px solid #3b82f6;
   box-shadow: 0 0 20px rgba(59,130,246,0.5);
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
 }
 
 /* Animations */
