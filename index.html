@@ -2,6 +2,55 @@
 <html lang="fr">
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 260px;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease;
+    position: relative;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00bfff;
+  }
+  .recommended {
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 25px #00bfff;
+  }
+  .badge {
+    background: #00bfff;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 0.85em;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    } to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Totti Clarence</title>
@@ -179,6 +228,61 @@
     <p class="mb-6 text-gray-300">Une idée ? Un projet ? Discutons-en.</p>
     <a href="mailto:contact@totticlarence.com" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition">Envoyer un e-mail</a>
   </section>
+
+  <section class="tarifs-section" style="background:#111; color:#fff; padding: 60px 20px;">
+  <div class="container" style="max-width: 1200px; margin:auto;">
+    <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 20px;">💰 Nos Tarifs</h2>
+
+    <!-- Recommandation -->
+    <p style="text-align: center; font-size: 1.1em; margin-bottom: 40px;">
+      🎧 <strong>Vous êtes un artiste qui débute ?</strong> Nous vous recommandons notre formule <strong style="color:#00bfff;">Start’Art</strong> – idéale pour obtenir un beau clip lyrics sans se ruiner !
+    </p>
+
+    <!-- Dédicaces -->
+    <h3><i class="fas fa-microphone-alt"></i> Dédicaces personnalisées</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Basique - 2 000 FCFA</h4>
+        <p>🔔 Message simple<br>🔔 Choix de chanson<br>❌ Ambiance<br>❌ Personnalisation</p>
+      </div>
+      <div class="card">
+        <h4>Standard - 4 500 FCFA</h4>
+        <p>🔔 Message simple<br>🔔 Choix de chanson<br>🔔 Ambiance<br>❌ Mention en description</p>
+      </div>
+      <div class="card">
+        <h4>Premium - 8 000 FCFA</h4>
+        <p>🔔 Message personnalisé<br>🔔 Choix de chanson<br>🔔 Ambiance<br>🔔 Mention en description<br>🔔 Offre spéciale</p>
+      </div>
+    </div>
+
+    <!-- Format court -->
+    <h3><i class="fas fa-video"></i> Clips Lyrics – Format court</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Starter - 2 000 FCFA</h4>
+        <p>🔔 Clip simple<br>🔔 Bonne qualité<br>❌ Personnalisation</p>
+      </div>
+      <div class="card">
+        <h4>Premium - 6 000 FCFA</h4>
+        <p>🔔 Clip simple<br>🔔 Bonne qualité<br>🔔 Personnalisation complète</p>
+      </div>
+    </div>
+
+    <!-- Format long -->
+    <h3><i class="fas fa-film"></i> Clips Lyrics – Format long</h3>
+    <div class="cards">
+      <div class="card recommended">
+        <div class="badge">⭐ Recommandé</div>
+        <h4>Start’Art - 10 000 FCFA</h4>
+        <p>🔔 Pour artistes débutants<br>🔔 Clip dynamique<br>🔔 Modifications simples<br>❌ Clip professionnel complet</p>
+      </div>
+      <div class="card">
+        <h4>Engagé - 25 000 FCFA</h4>
+        <p>🔔 Clip professionnel<br>🔔 Synchronisation avancée<br>🔔 Personnalisation totale<br>🔔 Idéal pour artistes établis</p>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-center py-6">
