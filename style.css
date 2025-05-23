@@ -1,0 +1,63 @@
+.tarif-card {
+  background: #0f0f0f;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+.tarif-card:hover {
+  transform: translateY(-5px);
+}
+
+.tarif-card h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.tarif-card .price {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #00bcd4;
+}
+.tarif-card ul {
+  list-style: none;
+  padding: 0;
+}
+.tarif-card li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+.valid::before {
+  content: '✔';
+  color: #4ade80;
+}
+.invalid::before {
+  content: '✘';
+  color: #f87171;
+}
+
+.recommended {
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 20px rgba(59,130,246,0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+.animate-zoom-in {
+  animation: zoomIn 0.5s ease forwards;
+}
+@keyframes zoomIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
