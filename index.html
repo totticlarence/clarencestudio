@@ -180,65 +180,79 @@
 </script>
 
  <!-- Services -->   
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const groups = document.querySelectorAll(".group");
-    const dotsContainer = document.getElementById("carousel-dots");
-    let current = 0;
-    let interval;
+<section id="services" class="py-20 bg-gray-950 text-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Nos services</h2>
 
-    // Créer les points
-    groups.forEach((_, i) => {
-      const dot = document.createElement("div");
-      dot.className = "dot";
-      dot.addEventListener("click", () => showGroup(i));
-      dotsContainer.appendChild(dot);
-    });
+    <div id="carousel-services" class="relative space-y-12">
+      <!-- Groupe 1 -->
+      <div class="group fade grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Clips Lyrics -->
+        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
+          <i class="fas fa-closed-captioning text-purple-400 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Clips Lyrics</h3>
+          <p>Réalisation de clips lyrics animés, avec paroles synchronisées et visuels captivants.</p>
+        </div>
+        <!-- TikTok -->
+        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
+          <i class="fab fa-tiktok text-pink-400 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Vidéos TikTok / Shorts / Reels</h3>
+          <p>Contenus courts, montage vertical, animations modernes pour percer.</p>
+        </div>
+        <!-- Boost -->
+        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
+          <i class="fas fa-rocket text-orange-400 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Boost sur nos plateformes</h3>
+          <p>Promotion via nos comptes TikTok, YouTube, Facebook et Telegram.</p>
+        </div>
+      </div>
 
-    const updateDots = () => {
-      const dots = dotsContainer.querySelectorAll(".dot");
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === current);
-      });
-    };
+      <!-- Groupe 2 -->
+      <div class="group fade grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Covers -->
+        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
+          <i class="fas fa-paint-brush text-yellow-300 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Covers et visuels</h3>
+          <p>Création de covers pro, visuels pour réseaux et promotions.</p>
+        </div>
+        <!-- Boutique -->
+        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
+          <i class="fas fa-store text-green-400 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Promo boutique / article</h3>
+          <p>Mini-spots produits, diffusion pour générer du trafic qualifié.</p>
+        </div>
+        <!-- Dédicace -->
+        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
+          <i class="fas fa-heart text-red-500 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Dédicaces personnalisées</h3>
+          <p>Prénom intégré dans un clip lyrics ou message spécial animé.</p>
+        </div>
+      </div>
 
-    const showGroup = (i) => {
-      groups.forEach(g => g.classList.remove("show"));
-      groups[i].classList.add("show");
-      current = i;
-      updateDots();
-    };
-
-    const nextGroup = () => {
-      showGroup((current + 1) % groups.length);
-    };
-
-    const startAutoSlide = () => {
-      interval = setInterval(nextGroup, 7000);
-    };
-
-    // Swipe
-    let startX = 0;
-    document.getElementById("carousel-services").addEventListener("touchstart", e => {
-      startX = e.touches[0].clientX;
-    });
-
-    document.getElementById("carousel-services").addEventListener("touchend", e => {
-      const endX = e.changedTouches[0].clientX;
-      if (endX - startX > 50) {
-        showGroup((current - 1 + groups.length) % groups.length);
-      } else if (startX - endX > 50) {
-        nextGroup();
-      }
-    });
-
-    // Init
-    showGroup(0);
-    startAutoSlide();
-  });
-</script>
-     
-      <
+      <!-- Groupe 3 -->
+      <div class="group fade grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Captation -->
+        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
+          <i class="fas fa-video text-blue-400 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Captation / Tournage</h3>
+          <p>Tournage pro, rendu cinématographique pour clips ou interviews.</p>
+        </div>
+        <!-- Montage -->
+        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
+          <i class="fas fa-cut text-cyan-400 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Montage vidéo</h3>
+          <p>Montage dynamique, effets, titrage et transitions pro.</p>
+        </div>
+        <!-- Consulting -->
+        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
+          <i class="fas fa-chalkboard-teacher text-amber-400 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Consulting artistique</h3>
+          <p>Conseils sur image, communication et diffusion musicale.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Points -->
   <div id="carousel-dots" class="flex justify-center mt-6 space-x-2"></div>
