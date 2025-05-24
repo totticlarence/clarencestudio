@@ -4,6 +4,24 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <!-- Dans le <head> -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<style> .fade {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.fade.show {
+  opacity: 1;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #888;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+.dot.active {
+  background-color: #3b82f6;
+}
+</style>
   <meta charset="UTF-8" />      
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />      
   <title>Totti Clarence</title>      
@@ -159,95 +177,87 @@
   });
 </script>
 
- <!-- Services -->   <section id="services" class="py-20 bg-gray-950 text-white">      
-  <div class="container mx-auto px-4">      
-    <h2 class="text-3xl font-bold text-center mb-12">Nos services</h2>      
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> 
+ <!-- Services -->   
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const groups = document.querySelectorAll(".group");
+    const dotsContainer = document.getElementById("carousel-dots");
+    let current = 0;
+    let interval;
 
- <!-- Clips Lyrics -->      
-  <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
-    <i class="fas fa-closed-captioning text-purple-400 text-4xl mb-4"></i>      
-    <h3 class="text-xl font-semibold mb-2">Clips Lyrics</h3>      
-    <p>      
-      Réalisation de clips lyrics animés, avec paroles synchronisées, transitions fluides et visuels captivants. Parfait pour YouTube et les réseaux sociaux.      
-    </p>      
-  </div>    
+    // Créer les points
+    groups.forEach((_, i) => {
+      const dot = document.createElement("div");
+      dot.className = "dot";
+      dot.addEventListener("click", () => showGroup(i));
+      dotsContainer.appendChild(dot);
+    });
 
-  <!-- TikTok / Shorts / Reels -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
-    <i class="fab fa-tiktok text-pink-400 text-4xl mb-4"></i>      
-    <h3 class="text-xl font-semibold mb-2">Vidéos TikTok / Shorts / Reels</h3>      
-    <p>      
-      Création de contenus courts et impactants pour les réseaux sociaux. Montage vertical, musique rythmée, animations modernes : tout pour vous rendre viral.      
-    </p>      
-  </div>      
+    const updateDots = () => {
+      const dots = dotsContainer.querySelectorAll(".dot");
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === current);
+      });
+    };
 
-<!-- Boost via notre réseau -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
-    <i class="fas fa-rocket text-orange-400 text-4xl mb-4"></i>      
-    <h3 class="text-xl font-semibold mb-2">Boost sur nos plateformes</h3>      
-    <p>      
-      Mise en avant de vos clips, covers ou produits via nos comptes populaires (TikTok, YouTube, Facebook, Telegram). Gagnez en visibilité et en notoriété.      
-    </p>      
-  </div>     
+    const showGroup = (i) => {
+      groups.forEach(g => g.classList.remove("show"));
+      groups[i].classList.add("show");
+      current = i;
+      updateDots();
+    };
 
- <!-- Covers et visuels -->     
- <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
-    <i class="fas fa-paint-brush text-yellow-300 text-4xl mb-4"></i>      
-    <h3 class="text-xl font-semibold mb-2">Covers et visuels</h3>      
-    <p>      
-      Création graphique de vos covers de single, album ou EP. Possibilité de bannières réseaux sociaux et visuels promotionnels professionnels.      
-    </p>      
-  </div>    
+    const nextGroup = () => {
+      showGroup((current + 1) % groups.length);
+    };
 
-  <!-- Mise en avant produit -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
-    <i class="fas fa-store text-green-400 text-4xl mb-4"></i>      
-    <h3 class="text-xl font-semibold mb-2">Promo boutique / article</h3>      
-    <p>      
-      Création de mini-spots pour présenter un produit ou une marque. Diffusion sur nos plateformes et réseaux pour générer du trafic qualifié.      
-    </p>      
-  </div>     
+    const startAutoSlide = () => {
+      interval = setInterval(nextGroup, 7000);
+    };
 
- <!-- Dédicaces personnalisées -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
-    <i class="fas fa-heart text-red-500 text-4xl mb-4"></i>      
-    <h3 class="text-xl font-semibold mb-2"><p>Dédicaces personnalisées<P></h3>      
-    <p>      
-      Offrez à vos fans une dédicace vidéo unique : leur prénom intégré dans un clip lyrics ou un message spécial, animé avec style.      
-    </p>      
-  </div>     
+    // Swipe
+    let startX = 0;
+    document.getElementById("carousel-services").addEventListener("touchstart", e => {
+      startX = e.touches[0].clientX;
+    });
 
- <!-- Captation / Tournage vidéo -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
-    <i class="fas fa-video text-blue-400 text-4xl mb-4"></i>      
-    <h3 class="text-xl font-semibold mb-2">Captation / Tournage</h3>      
-    <p>      
-      Tournage pro pour clips, événements ou interviews. Matériel haute qualité, mise en scène réfléchie, rendu cinématographique assuré.      
-    </p>      
-  </div>     
+    document.getElementById("carousel-services").addEventListener("touchend", e => {
+      const endX = e.changedTouches[0].clientX;
+      if (endX - startX > 50) {
+        showGroup((current - 1 + groups.length) % groups.length);
+      } else if (startX - endX > 50) {
+        nextGroup();
+      }
+    });
 
- <!-- Montage vidéo -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
-    <i class="fas fa-cut text-cyan-400 text-4xl mb-4"></i>      
-    <h3 class="text-xl font-semibold mb-2">Montage vidéo</h3>      
-    <p>      
-      Montage dynamique, ajout d’effets, synchronisation audio/vidéo, titrage, transitions. Un rendu pro qui met en valeur vos contenus.      
-    </p>      
-  </div>    
+    // Init
+    showGroup(0);
+    startAutoSlide();
+  });
+</script>
+     
+      <
 
-  <!-- Consulting / Accompagnement -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
-    <i class="fas fa-chalkboard-teacher text-amber-400 text-4xl mb-4"></i>      
-    <h3 class="text-xl font-semibold mb-2">Consulting artistique</h3>      
-    <p>      
-      Conseils sur votre image, communication, visuels et diffusion. Un accompagnement sur-mesure pour faire évoluer votre projet musical ou créatif.      
-    </p>      
-  </div>    
-</div>   
- </div>      
-</section>   
+  <!-- Points -->
+  <div id="carousel-dots" class="flex justify-center mt-6 space-x-2"></div>
+</div>
 
- <!-- Section Nos Tarifs (Arence Lyrics) -->  <section class="tarifs-section bg-[#0f0f0f] text-white py-16 px-6 font-sans">      
-  <div class="max-w-7xl mx-auto">  <!-- Titre principal -->      
+
+ <!-- Section Nos Tarifs (Arence Lyrics) --> 
+ <section class="tarifs-section bg-[#0f0f0f] text-white py-16 px-6 font-sans">      
+  <div class="max-w-7xl mx-auto"> 
+
+
+ <!-- Titre principal -->      
 <h2 class="text-3xl font-extrabold text-center mb-6">💰 Nos Tarifs</h2>      
 <p class="text-center text-lg text-gray-300 mb-12">      
   🎧 <strong>Vous êtes un artiste qui débute ?</strong> Essayez notre formule <span class="text-blue-400 font-semibold">Start’Art</span> – idéale pour un clip lyrics de qualité à petit prix !      
-</p>    <!-- ======= Dédicaces Personnalisées ======= -->    <h3 class="text-3xl font-bold text-blue-400 mb-4"><i class="fas fa-microphone-alt"></i> Dédicaces personnalisées</h3>      
+</p>   
+
+ <!-- ======= Dédicaces Personnalisées ======= -->    <h3 class="text-3xl font-bold text-blue-400 mb-4"><i class="fas fa-microphone-alt"></i> Dédicaces personnalisées</h3>      
 <div class="grid gap-6 md:grid-cols-3 mb-12">      
+
+
   <!-- Pack Basique -->      
   <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
     <h4 class="text-xl font-semibold">Basique</h4>      
@@ -259,7 +269,9 @@
       <li>✖ Personnalisation</li>      
     </ul>      
     <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
-  </div>      <!-- Pack Standard -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
+  </div>    
+
+  <!-- Pack Standard -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
     <h4 class="text-xl font-semibold">Standard</h4>      
     <p class="text-2xl font-bold my-2">4 500 FCFA</p>      
     <ul class="space-y-1 mb-4 text-sm text-gray-300">      
@@ -269,7 +281,9 @@
       <li>✖ Mention en description</li>      
     </ul>      
     <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
-  </div>      <!-- Pack Premium -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-xl border-2 border-yellow-400">      
+  </div>    
+
+  <!-- Pack Premium -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-xl border-2 border-yellow-400">      
     <h4 class="text-xl font-semibold">Premium <span class="text-yellow-400 text-sm ml-1">(Recommandé)</span></h4>      
     <p class="text-2xl font-bold my-2">8 000 FCFA</p>      
     <ul class="space-y-1 mb-4 text-sm text-gray-300">      
@@ -281,7 +295,9 @@
     </ul>      
     <a href="https://wa.me/241065616406" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-300 block text-center font-semibold">Commander ce Pack</a>      
   </div>      
-</div>    <!-- ======= Clips lyrics courts ======= -->    <h3 class="text-3xl font-bold text-blue-400 mb-4"><i class="fas fa-film"></i> Clip court</h3>      
+</div>   
+
+ <!-- ======= Clips lyrics courts ======= -->    <h3 class="text-3xl font-bold text-blue-400 mb-4"><i class="fas fa-film"></i> Clip court</h3>      
 <div class="grid gap-6 md:grid-cols-2 mb-12">      
   <!-- Starter -->      
   <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
