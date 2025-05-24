@@ -95,42 +95,122 @@
 
 <section id="filiales" style="background-color: #111; padding: 50px 0; color: white;">
   <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 30px;">Nous</h2>
-  <div class="carousel-container">
-    <div class="carousel-track">
-      
-      <!-- Filiale 1 -->
-      <div class="card">
-        <img src="LIEN_IMAGE_1" alt="Totti Clarence">
-        <h3>Totti Clarence</h3>
-        <p>Agence Digitale</p>
+  <div class="carousel-wrapper">
+    <button class="nav left" onclick="moveSlide(-1)">&#10094;</button>
+    
+    <div class="carousel">
+      <div class="carousel-track">
+
+        <!-- Filiale 1 -->
+        <div class="card">
+          <img src="LIEN_IMAGE_1" alt="Totti Clarence">
+          <h3>Totti Clarence</h3>
+          <p>Agence Digitale</p>
+        </div>
+
+        <!-- Filiale 2 -->
+        <div class="card">
+          <img src="LIEN_IMAGE_2" alt="Arence Lyrics">
+          <h3>Arence Lyrics</h3>
+          <p>Promotion musicale & clips lyrics Gabon</p>
+        </div>
+
+        <!-- Filiale 3 -->
+        <div class="card">
+          <img src="LIEN_IMAGE_3" alt="Arence Lyrics Gospel">
+          <h3>Arence Lyrics Gospel</h3>
+          <p>Spécialisé dans la musique gospel au Gabon</p>
+        </div>
+
+        <!-- À venir -->
+        <div class="card">
+          <img src="LIEN_IMAGE_4" alt="À venir">
+          <h3>À venir</h3>
+          <p>Notre vision est grande... de nouvelles filiales arrivent bientôt pour révolutionner le digital au Gabon.</p>
+        </div>
+
       </div>
-
-      <!-- Filiale 2 -->
-      <div class="card">
-        <img src="LIEN_IMAGE_2" alt="Arence Lyrics">
-        <h3>Arence Lyrics</h3>
-        <p>Promotion musicale & clips lyrics Gabon</p>
-      </div>
-
-      <!-- Filiale 3 -->
-      <div class="card">
-        <img src="LIEN_IMAGE_3" alt="Arence Lyrics Gospel">
-        <h3>Arence Lyrics Gospel</h3>
-        <p>Spécialisé dans la musique gospel au Gabon</p>
-      </div>
-
-      <!-- À venir -->
-      <div class="card">
-        <img src="LIEN_IMAGE_4" alt="À venir">
-        <h3>À venir</h3>
-        <p>Notre vision est grande... de nouvelles filiales arrivent bientôt pour révolutionner le digital au Gabon.</p>
-      </div>
-
-      <!-- Tu peux dupliquer ce bloc autant de fois que nécessaire -->
-
     </div>
+
+    <button class="nav right" onclick="moveSlide(1)">&#10095;</button>
   </div>
 </section>
+
+<style>
+.carousel-wrapper {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  width: 300px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  min-width: 300px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #3b82f6;
+  margin: 10px 0;
+}
+
+.card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.nav {
+  background: none;
+  color: #fff;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.nav:hover {
+  color: #3b82f6;
+}
+</style>
+
+<script>
+  let currentIndex = 0;
+
+  function moveSlide(direction) {
+    const track = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.card');
+    const totalSlides = slides.length;
+
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    const offset = currentIndex * -320; // card width + margin
+    track.style.transform = `translateX(${offset}px)`;
+  }
+</script>
 
 <style>
 .carousel-container {
