@@ -90,8 +90,87 @@
     <h2 class="text-4xl font-bold mb-4">Le berceau de la créativité</h2>      
     <p class="text-lg mb-6">Une entreprise créative et digitale ancrée au Gabon, tournée vers l’Afrique et le monde.</p>      
     <a href="#services" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition">Découvrir nos services</a>      
-  </div>      
-</section>   
+  </div>
+
+<section id="filiales" style="background-color: #111; padding: 50px 0; color: white;">
+  <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 30px;">Nous</h2>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      
+      <!-- Filiale 1 -->
+      <div class="card">
+        <img src="LIEN_IMAGE_1" alt="Totti Clarence">
+        <h3>Totti Clarence</h3>
+        <p>Agence Digitale</p>
+      </div>
+
+      <!-- Filiale 2 -->
+      <div class="card">
+        <img src="LIEN_IMAGE_2" alt="Arence Lyrics">
+        <h3>Arence Lyrics</h3>
+        <p>Promotion musicale & clips lyrics Gabon</p>
+      </div>
+
+      <!-- Filiale 3 -->
+      <div class="card">
+        <img src="LIEN_IMAGE_3" alt="Arence Lyrics Gospel">
+        <h3>Arence Lyrics Gospel</h3>
+        <p>Spécialisé dans la musique gospel au Gabon</p>
+      </div>
+
+      <!-- À venir -->
+      <div class="card">
+        <img src="LIEN_IMAGE_4" alt="À venir">
+        <h3>À venir</h3>
+        <p>Notre vision est grande... de nouvelles filiales arrivent bientôt pour révolutionner le digital au Gabon.</p>
+      </div>
+
+      <!-- Tu peux dupliquer ce bloc autant de fois que nécessaire -->
+
+    </div>
+  </div>
+<style>
+.carousel-container {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+}
+.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.card {
+  flex: 0 0 auto;
+  width: 280px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  scroll-snap-align: start;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.card h3 {
+  font-size: 1.2rem;
+  color: #3b82f6;
+}
+.card p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+</style>      
+</section>  
+</section> 
 
  <!-- À propos -->    <section id="a-propos" class="py-20 px-6 max-w-5xl mx-auto text-center">      
     <h3 class="text-3xl font-bold mb-4">À propos</h3>      
