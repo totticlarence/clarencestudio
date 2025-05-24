@@ -1,245 +1,252 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Totti Clarence</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
-  
-<!-- === BARRE DE NAVIGATION TRANSPARENTE === -->
-<header class="navbar">
-  <div class="container nav-content">
-    <a href="#" class="logo">
-      <img src="img/logo-arence.png" alt="Logo Arence" />
-    </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#accueil">Accueil</a>
-      <a href="#nos-secteurs">Secteurs</a>
-      <a href="#nos-services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-      <div class="social-icons">
-        <a href="https://tiktok.com/@arencelyrics" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://youtube.com/@totti_clarence" target="_blank"><i class="fab fa-youtube"></i></a>
-      </div>
-    </nav>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-</header>
-  
-  <!-- === SECTION ACCUEIL AVEC IMAGE FLOUE === -->
-<section class="hero hero-blur" id="accueil">
-  <div class="overlay-blur"></div> <!-- Filtre sombre/flou -->
-  <div class="hero-content container">
-    <h1 class="animate-title">Bienvenue chez Totti Clarence</h1>
-    <p class="animate-subtitle">Nous accompagnons les artistes et créateurs dans leur développement digital et musical.</p>
-    <a href="#nos-secteurs" class="cta-button">Découvrir nos services</a>
-  </div>
-  </section>
+<!DOCTYPE html>  <html lang="fr">    <head>        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">      
+  <meta charset="UTF-8" />      
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />      
+  <title>Totti Clarence</title>      
+  <script src="https://cdn.tailwindcss.com"></script>      
+</head>      
+<body class="bg-black text-white font-sans">    <!-- Header -->  <header class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-sm shadow-md">      
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">      
+    <h1 class="text-2xl font-bold text-white">Totti Clarence</h1>  <!-- Bouton menu burger -->      
+<button id="menuBtn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 relative z-50">      
+  <span class="bar bg-white w-6 h-0.5 mb-1 transition-all duration-300"></span>      
+  <span class="bar bg-white w-6 h-0.5 mb-1 transition-all duration-300"></span>      
+  <span class="bar bg-white w-6 h-0.5 transition-all duration-300"></span>      
+</button>    <!-- Navigation desktop -->    <nav class="space-x-6 hidden md:flex text-white">      
+  <a href="#accueil" class="hover:text-blue-400">Accueil</a>      
+  <a href="#a-propos" class="hover:text-blue-400">À propos</a>      
+  <a href="#secteurs" class="hover:text-blue-400">Nos secteurs</a>      
+  <a href="#services" class="hover:text-blue-400">Services</a>      
+  <a href="#contact" class="hover:text-blue-400">Contact</a>      
+</nav>    </div>    <!-- Menu mobile -->    <div id="mobileMenu" class="md:hidden px-6 pb-4 hidden flex-col space-y-2 text-white">      
+    <a href="#accueil" class="block hover:text-blue-400">Accueil</a>      
+    <a href="#a-propos" class="block hover:text-blue-400">À propos</a>      
+    <a href="#secteurs" class="block hover:text-blue-400">Nos secteurs</a>      
+    <a href="#services" class="block hover:text-blue-400">Services</a>      
+    <a href="#contact" class="block hover:text-blue-400">Contact</a>      
+  </div>      
+</header>    <!-- Hero / Accueil -->   <section id="accueil" class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=960,height=600/image/d84eb5f7-d099-4dc5-8bdc-46b9b66e0e27.jpg');">      
+  <div class="bg-black bg-opacity-60 p-10 rounded-xl text-center">      
+    <h2 class="text-4xl font-bold mb-4">Le berceau de la créativité</h2>      
+    <p class="text-lg mb-6">Une entreprise créative et digitale ancrée au Gabon, tournée vers l’Afrique et le monde.</p>      
+    <a href="#services" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition">Découvrir nos services</a>      
+  </div>      
+</section>    <!-- À propos -->    <section id="a-propos" class="py-20 px-6 max-w-5xl mx-auto text-center">      
+    <h3 class="text-3xl font-bold mb-4">À propos</h3>      
+    <p class="text-lg text-gray-300">Totti Clarence est une entreprise gabonaise spécialisée dans la production audiovisuelle, les lyrics vidéos, le digital marketing et bien plus. Nous mettons l’innovation au cœur de notre démarche.</p>      
+  </section>    <!-- Nos secteurs -->    <section id="secteurs" class="py-20 bg-gray-900 text-white">      
+  <div class="container mx-auto px-4">      
+    <h2 class="text-3xl font-bold text-center mb-12">Nos secteurs</h2>      
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">  <!-- Arence Films -->      
+  <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fas fa-video text-blue-500 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2">Arence Films</h3>      
+    <p>      
+      Spécialisée dans la production audiovisuelle professionnelle, Arence Films réalise des clips musicaux officiels, documentaires, courts-métrages, et vidéos commerciales. Du tournage au montage, notre équipe donne vie à vos projets visuels avec créativité et rigueur.      
+    </p>      
+  </div>      <!-- Arence Lyrics -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fas fa-music text-green-400 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2">Arence Lyrics</h3>      
+    <p>      
+      Arence Lyrics est l’agence leader de clips lyrics animés au Gabon. Nous créons des vidéos dynamiques pour YouTube, TikTok, Shorts et Reels, avec paroles synchronisées, visuels animés et covers personnalisées. Boostez votre carrière avec notre studio créatif.      
+    </p>      
+  </div>      <!-- Communication & Promotion -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fas fa-bullhorn text-yellow-400 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2">Promotion & Communication</h3>      
+    <p>      
+      Notre pôle communication vous accompagne dans votre visibilité digitale. Conception de contenus, gestion de réseaux sociaux, campagnes de pub, partenariats artistiques ou entreprises : nous avons les outils pour valoriser vos talents ou votre marque.      
+    </p>      
+  </div>      
+   <!-- Arence Gospel -->  <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+        <i class="fas fa-bullhorn text-yellow-400 text-4xl mb-4"></i>      
+        <h3 class="text-xl font-semibold mb-2">Promotion & Communication</h3>      
+        <p>      
+          Notre pôle communication vous accompagne dans votre visibilité digitale. Conception de contenus, gestion de réseaux sociaux, campagnes de pub, partenariats artistiques ou entreprises : nous avons les outils pour valoriser vos talents ou votre marque.      
+        </p>      
+      </div>      
+  </div>      
+</section>    <!-- Services -->   <section id="services" class="py-20 bg-gray-950 text-white">      
+  <div class="container mx-auto px-4">      
+    <h2 class="text-3xl font-bold text-center mb-12">Nos services</h2>      
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">  <!-- Clips Lyrics -->      
+  <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fas fa-closed-captioning text-purple-400 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2">Clips Lyrics</h3>      
+    <p>      
+      Réalisation de clips lyrics animés, avec paroles synchronisées, transitions fluides et visuels captivants. Parfait pour YouTube et les réseaux sociaux.      
+    </p>      
+  </div>      <!-- TikTok / Shorts / Reels -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fab fa-tiktok text-pink-400 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2">Vidéos TikTok / Shorts / Reels</h3>      
+    <p>      
+      Création de contenus courts et impactants pour les réseaux sociaux. Montage vertical, musique rythmée, animations modernes : tout pour vous rendre viral.      
+    </p>      
+  </div>      <!-- Boost via notre réseau -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fas fa-rocket text-orange-400 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2">Boost sur nos plateformes</h3>      
+    <p>      
+      Mise en avant de vos clips, covers ou produits via nos comptes populaires (TikTok, YouTube, Facebook, Telegram). Gagnez en visibilité et en notoriété.      
+    </p>      
+  </div>      <!-- Covers et visuels -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fas fa-paint-brush text-yellow-300 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2">Covers et visuels</h3>      
+    <p>      
+      Création graphique de vos covers de single, album ou EP. Possibilité de bannières réseaux sociaux et visuels promotionnels professionnels.      
+    </p>      
+  </div>      <!-- Mise en avant produit -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fas fa-store text-green-400 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2">Promo boutique / article</h3>      
+    <p>      
+      Création de mini-spots pour présenter un produit ou une marque. Diffusion sur nos plateformes et réseaux pour générer du trafic qualifié.      
+    </p>      
+  </div>      <!-- Dédicaces personnalisées -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fas fa-heart text-red-500 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2"><p>Dédicaces personnalisées<P></h3>      
+    <p>      
+      Offrez à vos fans une dédicace vidéo unique : leur prénom intégré dans un clip lyrics ou un message spécial, animé avec style.      
+    </p>      
+  </div>      <!-- Captation / Tournage vidéo -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fas fa-video text-blue-400 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2">Captation / Tournage</h3>      
+    <p>      
+      Tournage pro pour clips, événements ou interviews. Matériel haute qualité, mise en scène réfléchie, rendu cinématographique assuré.      
+    </p>      
+  </div>      <!-- Montage vidéo -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fas fa-cut text-cyan-400 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2">Montage vidéo</h3>      
+    <p>      
+      Montage dynamique, ajout d’effets, synchronisation audio/vidéo, titrage, transitions. Un rendu pro qui met en valeur vos contenus.      
+    </p>      
+  </div>      <!-- Consulting / Accompagnement -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+    <i class="fas fa-chalkboard-teacher text-amber-400 text-4xl mb-4"></i>      
+    <h3 class="text-xl font-semibold mb-2">Consulting artistique</h3>      
+    <p>      
+      Conseils sur votre image, communication, visuels et diffusion. Un accompagnement sur-mesure pour faire évoluer votre projet musical ou créatif.      
+    </p>      
+  </div>    </div>    </div>      
+</section>    <!-- Section Nos Tarifs (Arence Lyrics) -->  <section class="tarifs-section bg-[#0f0f0f] text-white py-16 px-6 font-sans">      
+  <div class="max-w-7xl mx-auto">  <!-- Titre principal -->      
+<h2 class="text-3xl font-extrabold text-center mb-6">💰 Nos Tarifs</h2>      
+<p class="text-center text-lg text-gray-300 mb-12">      
+  🎧 <strong>Vous êtes un artiste qui débute ?</strong> Essayez notre formule <span class="text-blue-400 font-semibold">Start’Art</span> – idéale pour un clip lyrics de qualité à petit prix !      
+</p>    <!-- ======= Dédicaces Personnalisées ======= -->    <h3 class="text-3xl font-bold text-blue-400 mb-4"><i class="fas fa-microphone-alt"></i> Dédicaces personnalisées</h3>      
+<div class="grid gap-6 md:grid-cols-3 mb-12">      
+  <!-- Pack Basique -->      
+  <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
+    <h4 class="text-xl font-semibold">Basique</h4>      
+    <p class="text-2xl font-bold my-2">2 000 FCFA</p>      
+    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
+      <li>✔ Message simple</li>      
+      <li>✔ Choix de chanson</li>      
+      <li>✖ Ambiance</li>      
+      <li>✖ Personnalisation</li>      
+    </ul>      
+    <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
+  </div>      <!-- Pack Standard -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
+    <h4 class="text-xl font-semibold">Standard</h4>      
+    <p class="text-2xl font-bold my-2">4 500 FCFA</p>      
+    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
+      <li>✔ Message simple</li>      
+      <li>✔ Choix de chanson</li>      
+      <li>✔ Ambiance</li>      
+      <li>✖ Mention en description</li>      
+    </ul>      
+    <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
+  </div>      <!-- Pack Premium -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-xl border-2 border-yellow-400">      
+    <h4 class="text-xl font-semibold">Premium <span class="text-yellow-400 text-sm ml-1">(Recommandé)</span></h4>      
+    <p class="text-2xl font-bold my-2">8 000 FCFA</p>      
+    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
+      <li>✔ Message personnalisé</li>      
+      <li>✔ Choix de chanson</li>      
+      <li>✔ Ambiance</li>      
+      <li>✔ Mention en description</li>      
+      <li>✔ Offre spéciale</li>      
+    </ul>      
+    <a href="https://wa.me/241065616406" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-300 block text-center font-semibold">Commander ce Pack</a>      
+  </div>      
+</div>    <!-- ======= Clips lyrics courts ======= -->    <h3 class="text-3xl font-bold text-blue-400 mb-4"><i class="fas fa-film"></i> Clip court</h3>      
+<div class="grid gap-6 md:grid-cols-2 mb-12">      
+  <!-- Starter -->      
+  <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
+    <h4 class="text-xl font-semibold">Starter</h4>      
+    <p class="text-2xl font-bold my-2">2 000 FCFA</p>      
+    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
+      <li>✔ Clip court</li>      
+      <li>✖ Personnalisation</li>      
+      <li>✔ Format TikTok / Reels</li>      
+    </ul>      
+    <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
+  </div>      <!-- Premium -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
+    <h4 class="text-xl font-semibold">Premium</h4>      
+    <p class="text-2xl font-bold my-2">6 000 FCFA</p>      
+    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
+      <li>✔ Clip court</li>      
+      <li>✔ Personnalisation (couleurs, polices...)</li>      
+      <li>✔ Format TikTok / Reels</li>      
+    </ul>      
+    <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
+  </div>      
+</div>    <!-- ======= Clips lyrics longs ======= -->    <h3 class="text-3xl font-bold text-blue-400 mb-4"><i class="fas fa-video"></i> Clip lyrics officiel</h3>      
+<p class="text-center text-gray-300 mb-6 text-base">🎤 <strong>Artiste débutant ?</strong> Le pack <span class="text-blue-400 font-bold">Start’Art</span> est fait pour vous 👇</p>      
+<div class="grid gap-6 md:grid-cols-2">      
+  <!-- Start'Art -->      
+  <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-xl border border-blue-500">      
+    <h4 class="text-xl font-semibold">Start’Art <span class="text-blue-400 text-sm">(Recommandé)</span></h4>      
+    <p class="text-2xl font-bold my-2">10 000 FCFA</p>      
+    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
+      <li>✔ Clip lyrics complet</li>      
+      <li>✔ Personnalisation simple</li>      
+      <li>✔ Style dynamique & épuré</li>      
+      <li>✖ Mention en description</li>      
+    </ul>      
+    <a href="https://wa.me/241065616406" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400 block text-center font-semibold">Commander ce Pack</a>      
+  </div>      <!-- Engagé -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
+    <h4 class="text-xl font-semibold">Engagé</h4>      
+    <p class="text-2xl font-bold my-2">25 000 FCFA</p>      
+    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
+      <li>✔ Clip lyrics professionnel</li>      
+      <li>✔ Personnalisation complète</li>      
+      <li>✔ Intégration artistique & storytelling</li>      
+      <li>✔ Mention description + mini-promo</li>      
+    </ul>      
+    <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
+  </div>      
+</div>    </div>      
+</section>  <!-- Font Awesome (n'oublie pas d'inclure ça dans <head> si ce n'est pas déjà fait) -->  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />  <!-- Font Awesome (n'oublie pas d'inclure ça dans <head> si ce n'est pas déjà fait) -->  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />    <!-- Contact -->    <section id="contact" class="py-20 px-6 text-center bg-black">      
+    <h3 class="text-3xl font-bold mb-4">Contactez-nous</h3>      
+    <p class="mb-6 text-gray-300">Une idée ? Un projet ? Discutons-en.</p>      
+    <a href="mailto:arencefilm@gmail.com" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition">Envoyer un e-mail</a>      
+  </section>    <!-- Footer -->    <footer class="site-footer">      
+  <div class="footer-container">      
+    <div class="footer-logo">      
+      <strong>Totti Clarence</strong>      
+    </div>  <div class="footer-links">      
+  <a href="#accueil">Accueil</a>      
+  <a href="#secteurs">Nos secteurs</a>      
+  <a href="#services">Services</a>      
+  <a href="#tarifs">Tarifs</a>      
+  <a href="#contact">Contact</a>      
+</div>    <div class="footer-socials">      
+  <a href="https://tiktok.com/@totti_clarence" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>      
+  <a href="https://youtube.com/@totti_clarence" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>      
+  <a href="https://wa.me/241065616406" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>      
+  <a href="https://arencelyrics.blogspot.com" target="_blank" title="Site Arence Lyrics"><i class="fas fa-music"></i></a>      
+  <a href="https://arencelyrics.blogspot.com/p/telecharger.html" target="_blank" title="Télécharger l'app mobile"><i class="fas fa-download"></i></a>      
+</div>    </div>      
+    <p class="text-gray-500 text-sm">© 2025 Totti Clarence. Tous droits réservés.</p>      
+  </footer>      
+  <script>      
+  const menuBtn = document.getElementById("menuBtn");      
+  const bars = menuBtn.querySelectorAll(".bar");      
+  const menu = document.getElementById("mobileMenu");  menuBtn.addEventListener("click", () => {    
+bars[0].classList.toggle("rotate-45");    
+bars[0].classList.toggle("translate-y-1.5");  bars[1].classList.toggle("opacity-0");  bars[2].classList.toggle("-rotate-45");
+bars[2].classList.toggle("-translate-y-1.5");
 
-      <!-- === COMPTEURS ANIMÉS === -->
-<section class="counters" id="counters">
-  <div class="container">
-    <div class="counter-box">
-      <i class="fas fa-video"></i>
-      <h2><span class="counter" data-target="120">0</span>+</h2>
-      <p>Réalisations</p>
-    </div>
-    <div class="counter-box">
-      <i class="fas fa-handshake"></i>
-      <h2><span class="counter" data-target="30">0</span>+</h2>
-      <p>Partenaires</p>
-    </div>
-    <div class="counter-box">
-      <i class="fas fa-users"></i>
-      <h2><span class="counter" data-target="75">0</span>+</h2>
-      <p>Artistes aidés</p>
-    </div>
-  </div>
-  </section>
+menu.classList.toggle("hidden");
 
-<!-- === PORTFOLIO === -->
-<section class="portfolio" id="portfolio">
-  <div class="section-title">
-    <h2>Nos Réalisations</h2>
-    <p>Découvrez quelques-unes de nos créations visuelles & clips lyrics</p>
-  </div>
+});
+</script>
 
-  <div class="portfolio-grid">
-    <div class="portfolio-card">
-      <img src="images/clip1.jpg" alt="Clip 1">
-      <div class="portfolio-info">
-        <h3>Clip Lyrics - Artiste A</h3>
-      </div>
-    </div>
-    <div class="portfolio-card">
-      <img src="images/cover1.jpg" alt="Cover 1">
-      <div class="portfolio-info">
-        <h3>Cover Design - Artiste B</h3>
-      </div>
-    </div>
-    <div class="portfolio-card">
-      <img src="images/short1.jpg" alt="Short TikTok">
-      <div class="portfolio-info">
-        <h3>Vidéo TikTok - Artiste C</h3>
-      </div>
-    </div>
-    <!-- Ajoute d'autres cartes si tu veux -->
-  </div>
-          </section>
-
-<!-- === À PROPOS === -->
-<section class="about" id="about">
-  <div class="about-container">
-    <div class="about-text">
-      <h2>À propos de Totti Clarence</h2>
-      <p>
-        Totti Clarence est une structure créative dédiée à la production audiovisuelle, à la mise en valeur des artistes émergents, et à la promotion digitale. Avec sa filiale <strong>Arence Lyrics</strong>, elle conçoit des clips lyrics dynamiques, des visuels percutants, et des campagnes virales sur les réseaux sociaux.
-      </p>
-      <p>
-        Notre objectif est clair : offrir à chaque artiste, débutant ou confirmé, une visibilité professionnelle et un accompagnement sur-mesure. Nous croyons au talent local et nous investissons pour le faire briller.
-      </p>
-    </div>
-    <div class="about-img">
-      <img src="images/totti-about.jpg" alt="Totti Clarence">
-    </div>
-  </div>
-            </section>
-
-  <section id="tarifs" class="section tarifs-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Nos Tarifs</h2>
-      <p class="section-subtitle">Des offres adaptées à tous les niveaux</p>
-    </div>
-
-    <div class="tarif-cards">
-      <!-- Dédicace personnalisée -->
-      <div class="tarif-card">
-        <i class="fas fa-microphone-alt icon"></i>
-        <h3>Dédicace Personnalisée</h3>
-        <ul>
-          <li>Basique – 2 000 FCFA</li>
-          <li>Standard – 4 500 FCFA</li>
-          <li>Premium – 8 000 FCFA</li>
-        </ul>
-        <button class="btn-blue">Commander</button>
-      </div>
-
-      <!-- Clip lyrics format court -->
-      <div class="tarif-card">
-        <i class="fas fa-video icon"></i>
-        <h3>Clip Lyrics (court)</h3>
-        <ul>
-          <li>Starter – 2 000 FCFA</li>
-          <li>Premium – 6 000 FCFA</li>
-        </ul>
-        <button class="btn-blue">Commander</button>
-      </div>
-
-      <!-- Clip lyrics format long -->
-      <div class="tarif-card">
-        <i class="fas fa-film icon"></i>
-        <h3>Clip Lyrics (long)</h3>
-        <ul>
-          <li>Start’Art – 10 000 FCFA</li>
-          <li>Engagé – 25 000 FCFA</li>
-        </ul>
-        <button class="btn-blue">Commander</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section id="contact" class="section contact-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Nous Contacter</h2>
-      <p class="section-subtitle">Une demande, une collaboration ? Écrivez-nous.</p>
-    </div>
-
-    <div class="contact-grid">
-      <!-- Formulaire -->
-      <form class="contact-form" action="#" method="POST">
-        <div class="form-group">
-          <input type="text" name="name" placeholder="Nom complet" required>
-        </div>
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Adresse e-mail" required>
-        </div>
-        <div class="form-group">
-          <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-        </div>
-        <button type="submit" class="btn-blue">
-          <i class="fas fa-paper-plane"></i> Envoyer
-        </button>
-      </form>
-
-      <!-- Infos contact -->
-      <div class="contact-infos">
-        <h3>Informations</h3>
-        <ul>
-          <li><i class="fas fa-map-marker-alt"></i> Libreville, Gabon</li>
-          <li><i class="fas fa-envelope"></i> contact@arencelyrics.com</li>
-          <li><i class="fas fa-phone"></i> +241 66 00 00 00</li>
-        </ul>
-        <div class="social-links">
-          <a href="https://tiktok.com/@arencelyrics" target="_blank"><i class="fab fa-tiktok"></i></a>
-          <a href="https://youtube.com/@totti_clarence" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-        <!-- Carte -->
-        <div class="map-container">
-          <iframe src="https://maps.google.com/maps?q=Libreville,Gabon&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            frameborder="0" allowfullscreen loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-          </section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <!-- Logo & Description -->
-      <div class="footer-section about">
-        <h2 class="logo">Totti Clarence</h2>
-        <p>Production audiovisuelle, clips lyrics, mise en avant et accompagnement des artistes émergents.</p>
-      </div>
-
-      <!-- Navigation -->
-      <div class="footer-section links">
-        <h3>Navigation</h3>
-        <ul>
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#services">Nos Services</a></li>
-          <li><a href="#secteurs">Nos Secteurs</a></li>
-          <li><a href="#tarifs">Nos Tarifs</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Réseaux sociaux -->
-      <div class="footer-section social">
-        <h3>Suivez-nous</h3>
-        <div class="social-icons">
-          <a href="https://tiktok.com/@arencelyrics" target="_blank"><i class="fab fa-tiktok"></i></a>
-          <a href="https://youtube.com/@totti_clarence" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2025 Totti Clarence. Tous droits réservés.</p>
-    </div>
-  </div>
-            </footer>
 <script>
   function toggleMenu() {
     const nav = document.getElementById("navLinks");
