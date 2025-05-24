@@ -14,7 +14,6 @@ function toggleMenu() {
 </script>
 
 
-// === Compteurs animés === //
 <script>
   const counters = document.querySelectorAll('.counter');
   let started = false;
