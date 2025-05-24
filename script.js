@@ -4,8 +4,7 @@ function toggleMenu() {
   document.querySelector('.nav-links').classList.toggle('open');
 }
 </script>
-
-<! Menu hamburger !>
+hamburger === //
 <script>
   function toggleMenu() {
     const nav = document.getElementById("navLinks");
@@ -13,7 +12,7 @@ function toggleMenu() {
   }
 </script>
 
-<! Compteurs animés !>
+// === Compteurs animés === //
 <script>
   const counters = document.querySelectorAll('.counter');
   let started = false;
