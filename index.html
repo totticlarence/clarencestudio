@@ -2,26 +2,28 @@
 <html lang="fr">    
 <head>        
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<!-- Dans le <head> -->
+<!-- CSS et Aos -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<style> .fade {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-.fade.show {
-  opacity: 1;
-}
-.dot {
-  width: 12px;
-  height: 12px;
-  background-color: #888;
-  border-radius: 9999px;
-  cursor: pointer;
-}
-.dot.active {
-  background-color: #3b82f6;
-}
+<style>
+  .fade {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .fade.show {
+    opacity: 1;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #888;
+    border-radius: 9999px;
+    cursor: pointer;
+  }
+  .dot.active {
+    background-color: #3b82f6;
+  }
 </style>
+
   <meta charset="UTF-8" />      
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />      
   <title>Totti Clarence</title>      
@@ -350,11 +352,17 @@
  </div>      
 </section> 
 
- <!-- Font Awesome (n'oublie pas d'inclure ça dans <head> si ce n'est pas déjà fait) -->  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />  <!-- Font Awesome (n'oublie pas d'inclure ça dans <head> si ce n'est pas déjà fait) -->  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />    <!-- Contact -->    <section id="contact" class="py-20 px-6 text-center bg-black">      
+ <!-- Font Awesome (n'oublie pas d'inclure ça dans <head> si ce n'est pas déjà fait) -->  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />  
+
+
+ <!-- Contact -->   
+ <section id="contact" class="py-20 px-6 text-center bg-black">      
     <h3 class="text-3xl font-bold mb-4">Contactez-nous</h3>      
     <p class="mb-6 text-gray-300">Une idée ? Un projet ? Discutons-en.</p>      
     <a href="mailto:arencefilm@gmail.com" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition">Envoyer un e-mail</a>      
-  </section>    <!-- Footer -->    <footer class="site-footer">      
+  </section>   
+
+ <!-- Footer -->    <footer class="site-footer">      
   <div class="footer-container">      
     <div class="footer-logo">      
       <strong>Totti Clarence</strong>      
@@ -372,68 +380,74 @@
   <a href="https://arencelyrics.blogspot.com/p/telecharger.html" target="_blank" title="Télécharger l'app mobile"><i class="fas fa-download"></i></a>      
 </div>    </div>      
     <p class="text-gray-500 text-sm">© 2025 Totti Clarence. Tous droits réservés.</p>      
-  </footer>      
-  <script>      
-  const menuBtn = document.getElementById("menuBtn");      
-  const bars = menuBtn.querySelectorAll(".bar");      
-  const menu = document.getElementById("mobileMenu");  menuBtn.addEventListener("click", () => {    
-bars[0].classList.toggle("rotate-45");    
-bars[0].classList.toggle("translate-y-1.5");  bars[1].classList.toggle("opacity-0");  bars[2].classList.toggle("-rotate-45");
-bars[2].classList.toggle("-translate-y-1.5");
+  </footer>
 
-menu.classList.toggle("hidden");
-
-});
-</script>
-
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("active");
-  }
-</script>
-
-<script>
-  const counters = document.querySelectorAll('.counter');
-  let started = false;
-
-  const startCounting = () => {
-    counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      const increment = target / 200;
-
-      const updateCount = () => {
-        const current = +counter.innerText;
-        if (current < target) {
-          counter.innerText = Math.ceil(current + increment);
-          setTimeout(updateCount, 10);
-        } else {
-          counter.innerText = target;
-        }
-      };
-
-      updateCount();
-    });
-  };
-
-  window.addEventListener('scroll', () => {
-    const section = document.getElementById('counters');
-    const top = section.getBoundingClientRect().top;
-    const trigger = window.innerHeight - 100;
-
-    if (top < trigger && !started) {
-      startCounting();
-      started = true;
-    }
-  });
-</script>
-<!-- Juste avant </body> -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<! -- js -- !>
+      
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({
-    duration: 1000, // durée de l'animation en ms
-    once: true      // animation une seule fois
+    duration: 1000,
+    once: false
   });
-</script>  
-</body>
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const groups = document.querySelectorAll(".group");
+    const dotsContainer = document.getElementById("carousel-dots");
+    let current = 0;
+    let interval;
+
+    // Créer les points
+    groups.forEach((_, i) => {
+      const dot = document.createElement("div");
+      dot.className = "dot";
+      dot.addEventListener("click", () => showGroup(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const updateDots = () => {
+      const dots = dotsContainer.querySelectorAll(".dot");
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === current);
+      });
+    };
+
+    const showGroup = (i) => {
+      groups.forEach(g => g.classList.remove("show"));
+      groups[i].classList.add("show");
+      current = i;
+      updateDots();
+    };
+
+    const nextGroup = () => {
+      showGroup((current + 1) % groups.length);
+    };
+
+    const startAutoSlide = () => {
+      interval = setInterval(nextGroup, 7000);
+    };
+
+    // Swipe
+    let startX = 0;
+    document.getElementById("carousel-services").addEventListener("touchstart", e => {
+      startX = e.touches[0].clientX;
+    });
+
+    document.getElementById("carousel-services").addEventListener("touchend", e => {
+      const endX = e.changedTouches[0].clientX;
+      if (endX - startX > 50) {
+        showGroup((current - 1 + groups.length) % groups.length);
+      } else if (startX - endX > 50) {
+        nextGroup();
+      }
+    });
+
+    // Init
+    showGroup(0);
+    startAutoSlide();
+  });
+</script>
+ </body>
 </html>
