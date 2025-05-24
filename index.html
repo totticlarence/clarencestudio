@@ -909,14 +909,32 @@ ah
   const mobileMenu = document.getElementById("mobileMenu");
   const bars = menuBtn.querySelectorAll(".bar");
 
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+  // Création du fond flouté
+  const blurOverlay = document.createElement("div");
+  blurOverlay.className = "fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-40 hidden";
+  document.body.appendChild(blurOverlay);
 
-    // Animation du bouton
+  menuBtn.addEventListener("click", () => {
+    const isHidden = mobileMenu.classList.contains("hidden");
+
+    mobileMenu.classList.toggle("hidden");
+    blurOverlay.classList.toggle("hidden");
+
+    // Animation des barres
     bars[0].classList.toggle("rotate-45");
     bars[1].classList.toggle("opacity-0");
     bars[2].classList.toggle("-rotate-45");
   });
+
+  // Fermer le menu en cliquant sur le fond flouté
+  blurOverlay.addEventListener("click", () => {
+    mobileMenu.classList.add("hidden");
+    blurOverlay.classList.add("hidden");
+    bars[0].classList.remove("rotate-45");
+    bars[1].classList.remove("opacity-0");
+    bars[2].classList.remove("-rotate-45");
+  });
 </script>
+
  </body>
 </html>
