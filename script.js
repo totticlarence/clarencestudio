@@ -4,7 +4,7 @@ function toggleMenu() {
   document.querySelector('.nav-links').classList.toggle('open');
 }
 </script>
-hamburger === //
+// === Menu hamburger === //
 <script>
   function toggleMenu() {
     const nav = document.getElementById("navLinks");
