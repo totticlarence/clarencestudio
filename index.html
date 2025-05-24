@@ -29,7 +29,9 @@
     <a href="#services" class="block hover:text-blue-400">Services</a>      
     <a href="#contact" class="block hover:text-blue-400">Contact</a>      
   </div>      
-</header>    <!-- Hero / Accueil -->   <section id="accueil" class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=960,height=600/image/d84eb5f7-d099-4dc5-8bdc-46b9b66e0e27.jpg');">      
+</header>   
+
+ <!-- Hero / Accueil -->   <section id="accueil" class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=960,height=600/image/d84eb5f7-d099-4dc5-8bdc-46b9b66e0e27.jpg');">      
   <div class="bg-black bg-opacity-60 p-10 rounded-xl text-center">      
     <h2 class="text-4xl font-bold mb-4">Le berceau de la créativité</h2>      
     <p class="text-lg mb-6">Une entreprise créative et digitale ancrée au Gabon, tournée vers l’Afrique et le monde.</p>      
@@ -87,7 +89,68 @@
   </div>
 </section>  
 
+<!-- Bloc Compteurs -->
+<section class="py-20 bg-gray-800 text-white text-center">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8">Seulement depuis 2025</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Artistes aidés -->
+      <div>
+        <p class="text-5xl font-extrabold text-blue-400 counter" data-target="150">0</p>
+        <p class="mt-2 text-lg font-medium">+ de Artistes aidés</p>
+      </div>
 
+      <!-- Contributeurs -->
+      <div>
+        <p class="text-5xl font-extrabold text-green-400 counter" data-target="75">0</p>
+        <p class="mt-2 text-lg font-medium">+ de Contributeurs</p>
+      </div>
+
+      <!-- Partenaires -->
+      <div>
+        <p class="text-5xl font-extrabold text-yellow-400 counter" data-target="30">0</p>
+        <p class="mt-2 text-lg font-medium">+ de Partenaires</p>
+      </div>
+    </div>
+
+    <p class="text-xl font-semibold text-white">Vous aussi, rejoignez-nous !</p>
+  </div>
+</section>
+
+<!-- Script compteur -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // vitesse d'animation
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = Math.ceil(target / speed);
+
+        if (count < target) {
+          counter.innerText = count + increment;
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target + '+';
+        }
+      };
+      updateCount();
+    });
+  };
+
+  // Lancer quand visible à l'écran
+  let started = false;
+  window.addEventListener('scroll', () => {
+    const section = document.querySelector('.counter');
+    if (section.getBoundingClientRect().top < window.innerHeight && !started) {
+      animateCounters();
+      started = true;
+    }
+  });
+</script>
 
  <!-- Services -->   <section id="services" class="py-20 bg-gray-950 text-white">      
   <div class="container mx-auto px-4">      
@@ -119,19 +182,24 @@
     </p>      
   </div>     
 
- <!-- Covers et visuels -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+ <!-- Covers et visuels -->     
+ <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
     <i class="fas fa-paint-brush text-yellow-300 text-4xl mb-4"></i>      
     <h3 class="text-xl font-semibold mb-2">Covers et visuels</h3>      
     <p>      
       Création graphique de vos covers de single, album ou EP. Possibilité de bannières réseaux sociaux et visuels promotionnels professionnels.      
     </p>      
-  </div>      <!-- Mise en avant produit -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+  </div>    
+
+  <!-- Mise en avant produit -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
     <i class="fas fa-store text-green-400 text-4xl mb-4"></i>      
     <h3 class="text-xl font-semibold mb-2">Promo boutique / article</h3>      
     <p>      
       Création de mini-spots pour présenter un produit ou une marque. Diffusion sur nos plateformes et réseaux pour générer du trafic qualifié.      
     </p>      
-  </div>      <!-- Dédicaces personnalisées -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
+  </div>     
+
+ <!-- Dédicaces personnalisées -->      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">      
     <i class="fas fa-heart text-red-500 text-4xl mb-4"></i>      
     <h3 class="text-xl font-semibold mb-2"><p>Dédicaces personnalisées<P></h3>      
     <p>      
