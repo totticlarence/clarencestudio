@@ -2,17 +2,29 @@
 <html lang="fr">    
 
 <head>        
+  <meta charset="UTF-8" />      
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />      
+  <title>Totti Clarence</title>      
+  <script src="https://cdn.tailwindcss.com"></script> 
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- CSS et Aos -->
+
+  <!-- Aos -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <!-- Police artistique pour effet script -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Polices -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
     .font-script {
-       font:family: 'Pacifico', cursive;
+      font-family: 'Pacifico', cursive;
     }
+
+    .font-vibes {
+      font-family: 'Great Vibes', cursive;
+    }
+
     .services-carousel {
       position: relative;
       min-height: 300px;
@@ -65,61 +77,51 @@
       animation: fadeInUp 0.5s ease-out both;
     }
 
-    /* Animation d’écriture effet script */
-    @keyframes typing {
+    /* Effet d’écriture lettre à lettre pour "Souris c'est la vie" */
+    @keyframes typing-vibes {
       from { width: 0 }
       to { width: 100% }
     }
 
-    .typing-script {
+    .typing-vibes {
       display: inline-block;
       white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid #3b82f6;
       width: 0;
-      font-family: 'Pacifico', cursive;
-      font-size: 1.25rem;
-      animation: typing 3s steps(30, end) forwards;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      animation: typing-vibes 4s steps(28, end) forwards;
     }
   </style>
-
-  <meta charset="UTF-8" />      
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />      
-  <title>Totti Clarence</title>      
-  <script src="https://cdn.tailwindcss.com"></script> 
 </head>
- 
-<body class="bg-black text-white font-sans">   
+
+<body class="bg-black text-white font-sans">
 
 <!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-sm shadow-md px-4 md:px-8 py-4">
+  <div class="flex flex-col md:flex-row md:items-center justify-between">
 
-<header class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-sm shadow-md transition-all duration-300">
-  <div class="text-left">
- <a href="#accueil"
-   class="text-2xl md:text-3xl font-extrabold text-white hover:text-blue-400 transition duration-300 transform -rotate-3 -translate-y-1 skew-x-2">
-   Totti Clarence
-</a>
+    <!-- Logo & titre -->
+    <div>
+      <a href="#accueil" class="text-3xl md:text-4xl font-extrabold text-white hover:text-blue-400 transition duration-300 transform -rotate-3 -translate-y-1 skew-x-2">
+        Totti Clarence
+      </a>
+      <p class="typing-vibes text-blue-300 mt-1">Souris, c'est la vie</p>
+      <p class="text-sm font-script text-gray-300 mt-1 transform -rotate-2 skew-x-2 -translate-x-1 animate-fade-in">
+        Peinture, art, émotion & vision
+      </p>
+    </div>
 
-<div class="text-left">
-  <a href="#accueil" class="text-4xl md:text-5xl font-extrabold tracking-wide text-white hover:text-blue-400 transition duration-300">
-    Totti Clarence
-  </a>
-  <p class="typing-script text-blue-300 mt-1">Souris, c'est la vie</p>
-</div>
-
-   <p class="text-sm font-script text-gray-300 mt-1 transform -rotate-2 skew-x-2 -translate-x-1 animate-fade-in">
-  Peinture, art, émotion & vision
-</p>
-  
-    <!-- Bouton menu burger -->
-    <button id="menuBtn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 relative z-50">
+    <!-- Bouton burger -->
+    <button id="menuBtn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 relative z-50 mt-4 md:mt-0">
       <span class="bar bg-white w-6 h-0.5 mb-1 transition-all duration-300"></span>
       <span class="bar bg-white w-6 h-0.5 mb-1 transition-all duration-300"></span>
       <span class="bar bg-white w-6 h-0.5 transition-all duration-300"></span>
     </button>
 
-    <!-- Navigation desktop -->
-    <nav class="space-x-6 hidden md:flex text-white">
+    <!-- Menu desktop -->
+    <nav class="hidden md:flex space-x-6 text-white mt-4 md:mt-0">
       <a href="#accueil" class="hover:text-blue-400">Accueil</a>
       <a href="#a-propos" class="hover:text-blue-400">À propos</a>
       <a href="#secteurs" class="hover:text-blue-400">Nos secteurs</a>
@@ -127,8 +129,6 @@
       <a href="#contact" class="hover:text-blue-400">Contact</a>
     </nav>
   </div>
-
-  <div id="mobileMenu" class="md:hidden hidden flex-col items-center bg-black bg-opacity-95 backdrop-blur-sm text-white px-6 py-4 space-y-4">
 
   <!-- Menu mobile -->
   <div id="mobileMenu" class="md:hidden hidden flex-col items-center bg-black bg-opacity-95 backdrop-blur-sm text-white px-6 py-4 space-y-4">
