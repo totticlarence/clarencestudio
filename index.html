@@ -33,6 +33,19 @@
   opacity: 1;
   display: grid;
 }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeInUp 1s ease-out both;
+}
 </style>
 
   <meta charset="UTF-8" />      
@@ -269,110 +282,120 @@
  <section class="tarifs-section bg-[#0f0f0f] text-white py-16 px-6 font-sans">      
   <div class="max-w-7xl mx-auto"> 
 
+<!-- Section Nos Tarifs (Arence Lyrics) --> 
+<section class="tarifs-section bg-[#0f0f0f] text-white py-16 px-6 font-sans">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-extrabold text-center mb-6">💰 Nos Tarifs</h2>
+    <p class="text-center text-lg text-gray-300 mb-12">
+      🎧 <strong>Vous êtes un artiste qui débute ?</strong> Essayez notre formule <span class="text-blue-400 font-semibold">Start’Art</span> – idéale pour un clip lyrics de qualité à petit prix !
+    </p>
 
- <!-- Titre principal -->      
-<h2 class="text-3xl font-extrabold text-center mb-6">💰 Nos Tarifs</h2>      
-<p class="text-center text-lg text-gray-300 mb-12">      
-  🎧 <strong>Vous êtes un artiste qui débute ?</strong> Essayez notre formule <span class="text-blue-400 font-semibold">Start’Art</span> – idéale pour un clip lyrics de qualité à petit prix !      
-</p>   
+    <!-- POUR LES ABONNÉS -->
+    <h3 class="text-2xl font-bold text-green-400 mb-6"><i class="fas fa-star"></i> Pour les Abonnés</h3>
 
- <!-- ======= Dédicaces Personnalisées ======= -->    <h3 class="text-3xl font-bold text-blue-400 mb-4"><i class="fas fa-microphone-alt"></i> Dédicaces personnalisées</h3>      
-<div class="grid gap-6 md:grid-cols-3 mb-12">      
+    <!-- Dédicaces personnalisées -->
+    <h4 class="text-xl font-bold text-blue-400 mb-2"><i class="fas fa-microphone-alt"></i> Dédicaces personnalisées</h4>
+    <div class="grid gap-6 md:grid-cols-3 mb-12">
+      <!-- Basique -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in">
+        <h5 class="text-lg font-semibold">Basique</h5>
+        <p class="text-xl font-bold my-2">2 000 FCFA</p>
+        <ul class="space-y-1 mb-4 text-sm text-gray-300">
+          <li><i class="fas fa-check text-green-400"></i> Message simple</li>
+          <li><i class="fas fa-check text-green-400"></i> Choix de chanson</li>
+          <li><i class="fas fa-times text-red-400"></i> Ambiance</li>
+          <li><i class="fas fa-times text-red-400"></i> Personnalisation</li>
+        </ul>
+        <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander</a>
+      </div>
 
+      <!-- Standard -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in">
+        <h5 class="text-lg font-semibold">Standard</h5>
+        <p class="text-xl font-bold my-2">4 500 FCFA</p>
+        <ul class="space-y-1 mb-4 text-sm text-gray-300">
+          <li><i class="fas fa-check text-green-400"></i> Message simple</li>
+          <li><i class="fas fa-check text-green-400"></i> Choix de chanson</li>
+          <li><i class="fas fa-check text-green-400"></i> Ambiance</li>
+          <li><i class="fas fa-times text-red-400"></i> Mention en description</li>
+        </ul>
+        <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander</a>
+      </div>
 
-  <!-- Pack Basique -->      
-  <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
-    <h4 class="text-xl font-semibold">Basique</h4>      
-    <p class="text-2xl font-bold my-2">2 000 FCFA</p>      
-    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
-      <li>✔ Message simple</li>      
-      <li>✔ Choix de chanson</li>      
-      <li>✖ Ambiance</li>      
-      <li>✖ Personnalisation</li>      
-    </ul>      
-    <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
-  </div>    
+      <!-- Premium -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in border-2 border-yellow-400">
+        <h5 class="text-lg font-semibold">Premium <span class="bg-yellow-400 text-black text-xs px-2 py-0.5 rounded ml-2 animate-pulse">Recommandé</span></h5>
+        <p class="text-xl font-bold my-2">8 000 FCFA</p>
+        <ul class="space-y-1 mb-4 text-sm text-gray-300">
+          <li><i class="fas fa-check text-green-400"></i> Message personnalisé</li>
+          <li><i class="fas fa-check text-green-400"></i> Choix de chanson</li>
+          <li><i class="fas fa-check text-green-400"></i> Ambiance</li>
+          <li><i class="fas fa-check text-green-400"></i> Mention en description</li>
+          <li><i class="fas fa-check text-green-400"></i> Offre spéciale</li>
+        </ul>
+        <a href="https://wa.me/241065616406" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-300 block text-center font-semibold">Commander</a>
+      </div>
+    </div>
 
-  <!-- Pack Standard -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
-    <h4 class="text-xl font-semibold">Standard</h4>      
-    <p class="text-2xl font-bold my-2">4 500 FCFA</p>      
-    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
-      <li>✔ Message simple</li>      
-      <li>✔ Choix de chanson</li>      
-      <li>✔ Ambiance</li>      
-      <li>✖ Mention en description</li>      
-    </ul>      
-    <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
-  </div>    
+    <!-- Clips courts -->
+    <h4 class="text-xl font-bold text-blue-400 mb-2"><i class="fas fa-film"></i> Clip lyrics court</h4>
+    <div class="grid gap-6 md:grid-cols-2 mb-12">
+      <!-- Starter -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in">
+        <h5 class="text-lg font-semibold">Starter</h5>
+        <p class="text-xl font-bold my-2">2 000 FCFA</p>
+        <ul class="space-y-1 mb-4 text-sm text-gray-300">
+          <li><i class="fas fa-check text-green-400"></i> Clip court</li>
+          <li><i class="fas fa-times text-red-400"></i> Personnalisation</li>
+          <li><i class="fas fa-check text-green-400"></i> Format TikTok / Reels</li>
+        </ul>
+        <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander</a>
+      </div>
 
-  <!-- Pack Premium -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-xl border-2 border-yellow-400">      
-    <h4 class="text-xl font-semibold">Premium <span class="text-yellow-400 text-sm ml-1">(Recommandé)</span></h4>      
-    <p class="text-2xl font-bold my-2">8 000 FCFA</p>      
-    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
-      <li>✔ Message personnalisé</li>      
-      <li>✔ Choix de chanson</li>      
-      <li>✔ Ambiance</li>      
-      <li>✔ Mention en description</li>      
-      <li>✔ Offre spéciale</li>      
-    </ul>      
-    <a href="https://wa.me/241065616406" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-300 block text-center font-semibold">Commander ce Pack</a>      
-  </div>      
-</div>   
+      <!-- Premium -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in">
+        <h5 class="text-lg font-semibold">Premium</h5>
+        <p class="text-xl font-bold my-2">6 000 FCFA</p>
+        <ul class="space-y-1 mb-4 text-sm text-gray-300">
+          <li><i class="fas fa-check text-green-400"></i> Clip court</li>
+          <li><i class="fas fa-check text-green-400"></i> Personnalisation</li>
+          <li><i class="fas fa-check text-green-400"></i> Format TikTok / Reels</li>
+        </ul>
+        <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander</a>
+      </div>
+    </div>
 
- <!-- ======= Clips lyrics courts ======= -->    <h3 class="text-3xl font-bold text-blue-400 mb-4"><i class="fas fa-film"></i> Clip court</h3>      
-<div class="grid gap-6 md:grid-cols-2 mb-12">      
-  <!-- Starter -->      
-  <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
-    <h4 class="text-xl font-semibold">Starter</h4>      
-    <p class="text-2xl font-bold my-2">2 000 FCFA</p>      
-    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
-      <li>✔ Clip court</li>      
-      <li>✖ Personnalisation</li>      
-      <li>✔ Format TikTok / Reels</li>      
-    </ul>      
-    <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
-  </div>      <!-- Premium -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
-    <h4 class="text-xl font-semibold">Premium</h4>      
-    <p class="text-2xl font-bold my-2">6 000 FCFA</p>      
-    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
-      <li>✔ Clip court</li>      
-      <li>✔ Personnalisation (couleurs, polices...)</li>      
-      <li>✔ Format TikTok / Reels</li>      
-    </ul>      
-    <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
-  </div>      
-</div>    
+    <!-- POUR LES ARTISTES -->
+    <h3 class="text-2xl font-bold text-purple-400 mb-6"><i class="fas fa-music"></i> Pour les Artistes</h3>
 
-<!-- ======= Clips lyrics longs ======= -->    <h3 class="text-3xl font-bold text-blue-400 mb-4"><i class="fas fa-video"></i> Clip lyrics officiel</h3>      
-<p class="text-center text-gray-300 mb-6 text-base">🎤 <strong>Artiste débutant ?</strong> Le pack <span class="text-blue-400 font-bold">Start’Art</span> est fait pour vous 👇</p>      
-<div class="grid gap-6 md:grid-cols-2">      
-  <!-- Start'Art -->      
-  <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-xl border border-blue-500">      
-    <h4 class="text-xl font-semibold">Start’Art <span class="text-blue-400 text-sm">(Recommandé)</span></h4>      
-    <p class="text-2xl font-bold my-2">10 000 FCFA</p>      
-    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
-      <li>✔ Clip lyrics complet</li>      
-      <li>✔ Personnalisation simple</li>      
-      <li>✔ Style dynamique & épuré</li>      
-      <li>✖ Mention en description</li>      
-    </ul>      
-    <a href="https://wa.me/241065616406" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400 block text-center font-semibold">Commander ce Pack</a>      
-  </div>      <!-- Engagé -->      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg">      
-    <h4 class="text-xl font-semibold">Engagé</h4>      
-    <p class="text-2xl font-bold my-2">25 000 FCFA</p>      
-    <ul class="space-y-1 mb-4 text-sm text-gray-300">      
-      <li>✔ Clip lyrics professionnel</li>      
-      <li>✔ Personnalisation complète</li>      
-      <li>✔ Intégration artistique & storytelling</li>      
-      <li>✔ Mention description + mini-promo</li>      
-    </ul>      
-    <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander par WhatsApp</a>      
-  </div>      
-</div>   
- </div>      
-</section> 
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Start’Art -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-xl border border-blue-500 animate-fade-in">
+        <h5 class="text-lg font-semibold">Start’Art <span class="text-blue-400 text-xs ml-1 animate-pulse">(Recommandé)</span></h5>
+        <p class="text-sm text-gray-400 italic mb-2">Clip lyrics simple pour débuter</p>
+        <ul class="space-y-1 mb-4 text-sm text-gray-300">
+          <li><i class="fas fa-check text-green-400"></i> Clip lyrics complet</li>
+          <li><i class="fas fa-check text-green-400"></i> Personnalisation simple</li>
+          <li><i class="fas fa-check text-green-400"></i> Style épuré & dynamique</li>
+        </ul>
+        <a href="https://wa.me/241065616406" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400 block text-center font-semibold">Demander un devis</a>
+      </div>
 
- <!-- Font Awesome (n'oublie pas d'inclure ça dans <head> si ce n'est pas déjà fait) -->  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />  
+      <!-- Engagé -->
+      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in">
+        <h5 class="text-lg font-semibold">Engagé</h5>
+        <p class="text-sm text-gray-400 italic mb-2">Clip lyrics pro avec storytelling</p>
+        <ul class="space-y-1 mb-4 text-sm text-gray-300">
+          <li><i class="fas fa-check text-green-400"></i> Clip lyrics professionnel</li>
+          <li><i class="fas fa-check text-green-400"></i> Personnalisation complète</li>
+          <li><i class="fas fa-check text-green-400"></i> Intégration artistique</li>
+          <li><i class="fas fa-check text-green-400"></i> Mini-promo offerte</li>
+        </ul>
+        <a href="https://wa.me/241065616406" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400 block text-center font-semibold">Demander un devis</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
  <!-- Contact -->   
