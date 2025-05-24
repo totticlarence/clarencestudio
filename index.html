@@ -1,69 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">    
+
 <head>        
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<!-- CSS et Aos -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<style>
-  .services-carousel {
-    position: relative;
-    min-height: 300px;
-    overflow: hidden;
-  }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- CSS et Aos -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  .fade {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    height: 0
-    visibility: hidden;
-    pointer-events: none;
-    z-index: 0;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s;
-  }
+  <!-- Police artistique pour effet script -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
-  .fade.show {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    z-index: 1;
-    display: grid;
-  }
+  <style>
+    .services-carousel {
+      position: relative;
+      min-height: 300px;
+      overflow: hidden;
+    }
 
-  .dot {
-    width: 12px;
-    height: 12px;
-    background-color: #888;
-    border-radius: 9999px;
-    cursor: pointer;
-  }
-
-  .dot.active {
-    background-color: #3b82f6;
-  }
-
-  @keyframes fadeInUp {
-    0% {
+    .fade {
+      position: absolute;
+      inset: 0;
       opacity: 0;
-      transform: translateY(40px);
+      height: 0;
+      visibility: hidden;
+      pointer-events: none;
+      z-index: 0;
+      transition: opacity 0.5s ease-in-out, visibility 0.5s;
     }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  .animate-fade-in {
-    animation: fadeInUp 0.5s ease-out both;
-  }
-</style>
+    .fade.show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      z-index: 1;
+      display: grid;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background-color: #888;
+      border-radius: 9999px;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #3b82f6;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.5s ease-out both;
+    }
+
+    /* Animation d’écriture effet script */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .typing-script {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #3b82f6;
+      width: 0;
+      font-family: 'Pacifico', cursive;
+      font-size: 1.25rem;
+      animation: typing 3s steps(30, end) forwards;
+    }
+  </style>
 
   <meta charset="UTF-8" />      
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />      
   <title>Totti Clarence</title>      
   <script src="https://cdn.tailwindcss.com"></script> 
-     
-</head>      
+</head>
+ 
 <body class="bg-black text-white font-sans">   
 
 <!-- Header -->
