@@ -898,5 +898,20 @@ ah
     setInterval(nextGroup, 5000);
   });
 </script>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const bars = menuBtn.querySelectorAll(".bar");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+
+    // Animation du bouton
+    bars[0].classList.toggle("rotate-45");
+    bars[1].classList.toggle("opacity-0");
+    bars[2].classList.toggle("-rotate-45");
+  });
+</script>
  </body>
 </html>
