@@ -471,5 +471,28 @@
     startAutoSlide();
   });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const groups = document.querySelectorAll(".group");
+    let current = 0;
+
+    const showGroup = (index) => {
+      groups.forEach((group, i) => {
+        group.classList.remove("show");
+        if (i === index) group.classList.add("show");
+      });
+    };
+
+    const nextGroup = () => {
+      current = (current + 1) % groups.length;
+      showGroup(current);
+    };
+
+    // Initialisation
+    showGroup(current);
+    setInterval(nextGroup, 5000);
+  });
+</script>
  </body>
 </html>
