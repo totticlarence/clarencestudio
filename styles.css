@@ -1,162 +1,140 @@
-/* ===== FONTS ===== */
+/* ===== IMPORT DU FONT ===== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #f9f9f9;
-  color: #222;
-  line-height: 1.7;
-  overflow-x: hidden;
+  background: #fafafa;
+  color: #333;
+  margin: 0;
+  line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3 {
   font-weight: 700;
-  color: #111;
-}
-
-p {
-  color: #444;
+  color: #222;
 }
 
 a {
-  color: #007BFF;
+  color: #0066cc;
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 a:hover {
-  color: #0056b3;
+  color: #004999;
 }
 
-/* ===== HERO ===== */
+/* ===== EN-TÊTE / HERO ===== */
 .hero {
-  min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-              url("images/hero-bg.jpg") center/cover no-repeat;
-  color: #fff;
-  text-align: center;
+  background: #fff;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
 }
-
 .hero h1 {
-  font-size: 3.5rem;
-  letter-spacing: 1px;
-  text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
-
 .hero p {
-  max-width: 700px;
-  margin: 20px auto;
   font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
 }
-
 .hero .btn-primary {
-  background: #007BFF;
+  background: #0066cc;
   border: none;
-  padding: 12px 30px;
-  border-radius: 30px;
-  transition: 0.3s;
+  padding: 12px 24px;
+  border-radius: 25px;
+  color: #fff;
+  transition: background 0.3s, transform 0.3s;
 }
 .hero .btn-primary:hover {
-  background: #0056b3;
+  background: #005bb5;
   transform: translateY(-3px);
 }
 
-/* ===== SECTIONS ===== */
+/* ===== SECTIONS ALTERNEES ===== */
 section {
-  padding: 80px 0;
-  background: #fff;
+  padding: 80px 20px;
 }
-
 section:nth-of-type(even) {
-  background: #f2f4f7; /* profondeur douce */
+  background: #f2f7fc;
 }
 
-/* ===== SERVICES / CARTES ===== */
+/* ===== CARTES SERVICES ===== */
 .card {
   border: none;
-  border-radius: 16px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  transition: 0.3s;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 30px;
   background: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 .card h4 {
-  color: #007BFF;
-}
-.card p {
-  color: #555;
+  color: #0066cc;
 }
 
 /* ===== PORTFOLIO ===== */
 #portfolio img {
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  transition: 0.4s;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  transition: transform 0.4s, box-shadow 0.4s;
 }
 #portfolio img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 #portfolio h5 {
   margin-top: 15px;
-  color: #333;
+  font-weight: 600;
+  color: #222;
 }
 
 /* ===== TÉMOIGNAGES ===== */
 blockquote {
-  background: #ffffff;
-  padding: 25px;
+  background: #fff;
+  padding: 30px;
   border-radius: 12px;
+  border-left: 4px solid #0066cc;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   font-style: italic;
-  color: #444;
-  border-left: 5px solid #007BFF;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  transition: 0.3s;
+  color: #555;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 blockquote:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 /* ===== CONTACT ===== */
 #contact {
-  background: #f2f4f7;
+  text-align: center;
 }
 #contact .btn-primary {
-  background: #007BFF;
+  background: #0066cc;
   border: none;
-  border-radius: 30px;
-  padding: 12px 30px;
-  transition: 0.3s;
+  padding: 12px 24px;
+  border-radius: 25px;
+  color: #fff;
 }
 #contact .btn-primary:hover {
-  background: #0056b3;
+  background: #005bb5;
   transform: translateY(-3px);
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background: #111;
-  color: #bbb;
-  font-size: 0.9rem;
-}
-footer p {
-  margin: 0;
-  color: #999;
-}
-
-/* ===== ANIMATIONS FADE-IN ===== */
+/* ===== ANIMATION SCROLL FADE-IN ===== */
 .fade-in-up {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
 .fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
