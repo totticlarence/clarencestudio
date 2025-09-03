@@ -1,960 +1,750 @@
+
 <!DOCTYPE html>
-<html lang="fr">    
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clarence</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="webthemez">
+    <title>Elegant Free Multi purpose Bootstrap Responsive Template</title>
+	<!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet"> 
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet"> 
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico"> 
+</head> 
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<body id="home">
 
-  <!-- Google Adsense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=TON_ID_ADSENSE"
-     crossorigin="anonymous"></script>
+    <header id="header">
+        <nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="scroll active"><a href="#home">Home</a></li>
+                        <li class="scroll"><a href="#features">Features</a></li>
+                        <li class="scroll"><a href="#about">About</a></li>
+                        <li class="scroll"><a href="#services">Services</a></li>
+                        <li class="scroll"><a href="#portfolio">Portfolio</a></li>
+                        <li class="scroll"><a href="#our-team">Team</a></li>
+                        <li class="scroll"><a href="#pricing">Pricing</a></li>
+                        <li class="scroll"><a href="#contact-us">Contact</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <section id="hero-banner">
+             <div class="banner-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                 
+                                    <h2>Best Flat Responsive html Template</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et  dolore.</p>
+                                    <a class="btn btn-primary btn-lg" href="#">Read More</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section><!--/#main-slider-->
 
-  <!-- AOS (animations) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-  <!-- Police Pacifico pour d'autres usages -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
-  <style>
-    /* Carousel */
-    .services-carousel {
-      position: relative;
-      min-height: 300px;
-      overflow: hidden;
-    }
-
-    .fade {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      height: 0;
-      visibility: hidden;
-      pointer-events: none;
-      z-index: 0;
-      transition: opacity 0.5s ease-in-out, visibility 0.5s;
-    }
-
-    .fade.show {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      z-index: 1;
-      display: grid;
-    }
-
-    .dot {
-      width: 12px;
-      height: 12px;
-      background-color: #888;
-      border-radius: 9999px;
-      cursor: pointer;
-    }
-
-    .dot.active {
-      background-color: #3b82f6;
-    }
-
-    /* Animation fade in */
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fade-in {
-      animation: fadeInUp 0.5s ease-out both;
-    }
-  </style>
-</head>
-
-<body class="bg-black text-white font-sans">
-
-<!-- Header -->
-
-<body class="bg-black text-white font-sans">
-  <header class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-80 backdrop-blur-sm shadow-md transition-all duration-300">
-    <div class="flex items-center justify-between px-6 py-4">
-      <!-- Logo / Titre -->
-      <a href="#accueil" class="text-4xl md:text-5xl font-extrabold tracking-wide text-white hover:text-blue-400 transition duration-300">
-        Clarence
-      </a>
-
-      <!-- Bouton menu burger -->
-      <button id="menuBtn" class="md:hidden flex flex-col justify-center items-center w-8 h-8 relative z-50">
-        <span class="bar bg-white w-6 h-0.5 mb-1 transition-all duration-300"></span>
-        <span class="bar bg-white w-6 h-0.5 mb-1 transition-all duration-300"></span>
-        <span class="bar bg-white w-6 h-0.5 transition-all duration-300"></span>
-      </button>
-
-      <!-- Menu desktop -->
-      <nav class="space-x-6 hidden md:flex text-white">
-        <a href="#accueil" class="hover:text-blue-400">Accueil</a>
-        <a href="#a-propos" class="hover:text-blue-400">À propos</a>
-        <a href="#secteurs" class="hover:text-blue-400">Nos secteurs</a>
-        <a href="#services" class="hover:text-blue-400">Services</a>
-        <a href="#contact" class="hover:text-blue-400">Contact</a>
-      </nav>
-    </div>
-
-    <!-- Menu mobile -->
-    <div id="mobileMenu" class="md:hidden hidden flex-col items-center bg-black bg-opacity-95 backdrop-blur-sm text-white px-6 py-4 space-y-4">
-      <a href="#accueil" class="block hover:text-blue-400">Accueil</a>
-      <a href="#a-propos" class="block hover:text-blue-400">À propos</a>
-      <a href="#secteurs" class="block hover:text-blue-400">Nos secteurs</a>
-      <a href="#services" class="block hover:text-blue-400">Services</a>
-      <a href="#contact" class="block hover:text-blue-400">Contact</a>
-      <div class="flex space-x-4 mt-4">
-        <a href="https://www.youtube.com/@arencelyrics" target="_blank" aria-label="YouTube">
-          <i class="fab fa-youtube text-red-600 text-2xl"></i>
-        </a>
-        <a href="https://www.tiktok.com/@arencelyrics" target="_blank" aria-label="TikTok">
-          <i class="fab fa-tiktok text-white text-2xl"></i>
-        </a>
-      </div>
-    </div>
-  </header>
-
-<!-- Accueil au style de xeta-digital.com -->
-<section id="accueil" class="min-h-[60vh] flex items-center justify-center bg-[#0f0f0f] px-6">
-  <div class="max-w-3xl text-center">
-    <h2 class="text-white text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-      Le berceau de la créativité
-    </h2>
-    <p class="text-gray-400 text-lg md:text-xl mb-6">
-      Une entreprise créative et digitale ancrée au Gabon, tournée vers l’Afrique et le monde.
-    </p>
-    <a href="#services" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition duration-300">
-      Découvrir nos services
-    </a>
-  </div>
-</section>
-
-<section id="filiales" style="background-color: #111; padding: 50px 0; color: white;">
-  <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 30px;">Nous</h2>
-  <div class="carousel-wrapper">
-    <button class="nav left" onclick="moveSlide(-1)">&#10094;</button>
-
-    <div class="carousel">
-      <div class="carousel-track">
-
-        <div class="card">
-          <img src="LIEN_IMAGE_1" alt="Totti Clarence">
-          <h3>Clarence</h3>
-          <p>Agence Digitale</p>
+    <section id="hero-text" class="wow fadeIn">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9">
+                    <h2>Best Flat Responsive Free Bootstrap Template</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa semper aliquam quis mattis quam. Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum. 
+                    </p>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <a class="btn btn-primary btn-lg" href="#">Get It Now!</a>
+                </div>
+            </div>
         </div>
+    </section><!--/#hero-text-->
 
-        <div class="card">
-          <img src="LIEN_IMAGE_2" alt="Arence Lyrics">
-          <h3>Clarence Lyrics</h3>
-          <p>Promotion musicale & clips lyrics Gabon</p>
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Awesome Features</h2> 
+				<p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
+            <div class="row">               
+                <div class="col-md-6">
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-rss"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">User Research</h4>
+                            <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. </p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-cogs"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Visual Designing</h4>
+                            <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor.</p>
+                        </div>
+                    </div>
+</div>
+<div class="col-md-6">
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-line-chart"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">UI Development</h4>
+                            <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. </p>
+                        </div>
+                    </div>
+
+                    <div class="media service-box wow fadeInRight">
+                        <div class="pull-left">
+                            <i class="fa fa-cloud-upload"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Quality Test</h4>
+                            <p>Fusce non fermentum mi. Praesent vel lobortis elit. Nulla sodales, risus quis sollicitudin iaculis, felis dolor aliquet purus, eget elementum velit nunc eu dolor. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-          <img src="LIEN_IMAGE_3" alt="Arence Lyrics Gospel">
-          <h3>Clarence Lyrics Gospel</h3>
-          <p>Spécialisé dans la musique gospel au Gabon</p>
+ <section id="about">
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">About Us</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                  <img class="img-responsive" src="images/about.png" alt="">
+                </div>
+
+                <div class="col-sm-6 wow fadeInRight">
+                    <h3 class="column-title">Our Company</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa semper aliquam quis mattis quam. Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
+
+                    <p>Nulla eu neque commodo, dapibus dolor eget, dictum arcu. In nec purus eu tellus consequat ultricies. Donec feugiat tempor turpis, rutrum sagittis mi venenatis at. Sed molestie lorem a blandit congue. Ut pellentesque odio quis leo volutpat, vitae vulputate felis condimentum. </p>
+
+					<p>Praesent vulputate fermentum lorem, id rhoncus sem vehicula eu. Quisque ullamcorper, orci adipiscing auctor viverra, velit arcu malesuada metus, in volutpat tellus sem at justo.</p>
+
+
+                    <a class="btn btn-primary" href="#">Learn More</a>
+
+                </div>
+            </div>
         </div>
-
-        <div class="card">
-          <img src="LIEN_IMAGE_4" alt="À venir">
-          <h3>À venir</h3>
-          <p>Notre vision est grande... de nouvelles filiales arrivent bientôt pour révolutionner le digital au Gabon.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <button class="nav right" onclick="moveSlide(1)">&#10095;</button>
-  </div>
-</section>
-
-<style>
-.carousel-wrapper {
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel {
-  width: 300px;
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.card {
-  min-width: 300px;
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  margin: 0 10px;
-  flex-shrink: 0;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  color: #3b82f6;
-  margin: 10px 0;
-}
-
-.card p {
-  color: #ccc;
-  font-size: 0.95rem;
-}
-
-.nav {
-  background: none;
-  color: #fff;
-  font-size: 2rem;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1;
-}
-
-.nav:hover {
-  color: #3b82f6;
-}
-</style>
-
-<script>
-  let currentIndex = 0;
-  const track = document.querySelector('.carousel-track');
-  const slides = document.querySelectorAll('.card');
-  const totalSlides = slides.length;
-
-  function moveSlide(direction) {
-    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
-    updateCarousel();
-  }
-
-  function updateCarousel() {
-    const offset = currentIndex * -320;
-    track.style.transform = `translateX(${offset}px)`;
-  }
-
-  setInterval(() => {
-    moveSlide(1);
-  }, 5000); // défilement automatique toutes les 5s
-</script>
-
-<style>
-.carousel-wrapper {
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel {
-  width: 300px;
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.card {
-  min-width: 300px;
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  margin: 0 10px;
-  flex-shrink: 0;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  color: #3b82f6;
-  margin: 10px 0;
-}
-
-.card p {
-  color: #ccc;
-  font-size: 0.95rem;
-}
-
-.nav {
-  background: none;
-  color: #fff;
-  font-size: 2rem;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1;
-}
-
-.nav:hover {
-  color: #3b82f6;
-}
-</style>
-
-<script>
-  let currentIndex = 0;
-
-  function moveSlide(direction) {
-    const track = document.querySelector('.carousel-track');
-    const slides = document.querySelectorAll('.card');
-    const totalSlides = slides.length;
-
-    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
-    const offset = currentIndex * -320; // card width + margin
-    track.style.transform = `translateX(${offset}px)`;
-  }
-</script>
-
-<style>
-.carousel-container {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  display: flex;
-  gap: 20px;
-  padding: 0 20px;
-}
-.carousel-track {
-  display: flex;
-  flex-wrap: nowrap;
-}
-.card {
-  flex: 0 0 auto;
-  width: 280px;
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  padding: 20px;
-  scroll-snap-align: start;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-.card:hover {
-  transform: scale(1.05);
-}
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-.card h3 {
-  font-size: 1.2rem;
-  color: #3b82f6;
-}
-.card p {
-  font-size: 0.95rem;
-  color: #ccc;
-}
-</style>
-
- <!-- À propos -->    <section id="a-propos" class="py-20 px-6 max-w-5xl mx-auto text-center">      
-    <h3 class="text-3xl font-bold mb-4">À propos</h3>      
-    <p class="text-lg text-gray-300">Clarence est une entreprise gabonaise spécialisée dans la production audiovisuelle, les lyrics vidéos, le digital marketing et bien plus. Nous mettons l’innovation au cœur de notre démarche.</p>     
-  </section>  
-
-<!-- Secteurs -->
-<section id="secteurs" class="py-20 bg-gray-900 text-white">      
-  <div class="container mx-auto px-4">      
-    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">Nos secteurs</h2>      
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">  
-      
-      <!-- Arence Films -->      
-      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition" data-aos="fade-up">      
-        <i class="fas fa-video text-blue-500 text-4xl mb-4"></i>      
-        <h3 class="text-xl font-semibold mb-2">Clarence Films</h3>      
-        <p>
-          Spécialisée dans la production audiovisuelle professionnelle, Clarence Films réalise des clips musicaux officiels, documentaires, courts-métrages, et vidéos commerciales. Du tournage au montage, notre équipe donne vie à vos projets visuels avec créativité et rigueur.      
-        </p>      
-      </div>
-
-      <!-- Arence Lyrics -->      
-      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition" data-aos="fade-up" data-aos-delay="100">      
-        <i class="fas fa-music text-green-400 text-4xl mb-4"></i>      
-        <h3 class="text-xl font-semibold mb-2">Clarence Lyrics</h3>      
-        <p>
-          Clarence Lyrics est l’agence leader de clips lyrics animés pour artistes débutants au Gabon. Nous créons des vidéos dynamiques pour YouTube, TikTok, Shorts et Reels, avec paroles synchronisées, visuels animés et covers personnalisées. Boostez votre carrière avec notre studio créatif.      
-        </p>      
-      </div>
-
-      <!-- Promotion & Communication -->      
-      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition" data-aos="fade-up" data-aos-delay="200">      
-        <i class="fas fa-bullhorn text-yellow-400 text-4xl mb-4"></i>      
-        <h3 class="text-xl font-semibold mb-2">Promotion & Communication</h3>      
-        <p>
-          Notre pôle communication vous accompagne dans votre visibilité digitale. Conception de contenus, gestion de réseaux sociaux, campagnes de pub, partenariats artistiques ou entreprises : nous avons les outils pour valoriser vos talents ou votre marque.      
-        </p>      
-      </div>
-
-      <!-- Arence Gospel -->
-      <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition" data-aos="fade-up" data-aos-delay="300">  
-        <i class="fa-solid fa-cross text-purple-500 text-4xl mb-4"></i>        
-        <h3 class="text-xl font-semibold mb-2">Clarence Gospel & Tradition</h3>      
-        <p>      
-          Clarence G & C est une branche dédiée à la promotion de la musique gospel gabonaise et africaine. Nous réalisons des clips lyrics animés inspirants et professionnels pour artistes chrétiens, avec des visuels soignés, des paroles synchronisées et une mise en avant sur nos réseaux spécialisés. Notre objectif est de faire rayonner le message de foi à travers la créativité visuelle et l’excellence technique.      
-        </p>      
-      </div>
-    </div>
-  </div>
-</section>  
-
-<!-- Bloc Compteurs -->
-<section class="py-20 bg-gray-800 text-white text-center">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-8">Seulement depuis 2025</h2>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-      <!-- Artistes aidés -->
-      <div>
-        <p class="text-5xl font-extrabold text-blue-400 counter" data-target="150">0</p>
-        <p class="mt-2 text-lg font-medium">+ de Artistes aidés</p>
-      </div>
-
-      <!-- Contributeurs -->
-      <div>
-        <p class="text-5xl font-extrabold text-green-400 counter" data-target="75">0</p>
-        <p class="mt-2 text-lg font-medium">+ de Contributeurs</p>
-      </div>
-
-      <!-- Partenaires -->
-      <div>
-        <p class="text-5xl font-extrabold text-yellow-400 counter" data-target="30">0</p>
-        <p class="mt-2 text-lg font-medium">+ de Partenaires</p>
-      </div>
-    </div>
-
-    <p class="text-xl font-semibold mb-6">Vous aussi, rejoignez-nous !</p>
-
-    <a href="https://wa.me/24165084498" class="group inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition duration-300">
-  Contacter
-  <span class="ml-2 transform transition-transform duration-300 group-hover:translate-x-1">
-    <i class="fas fa-arrow-right"></i>
-  </span>
-</a>
-  </div>
-</section>
-
-<!-- Script compteur -->
-<script>
-  const counters = document.querySelectorAll('.counter');
-  const speed = 200; // vitesse d'animation
-
-  const animateCounters = () => {
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = Math.ceil(target / speed);
-
-        if (count < target) {
-          counter.innerText = count + increment;
-          setTimeout(updateCount, 10);
-        } else {
-          counter.innerText = target + '+';
-        }
-      };
-      updateCount();
-    });
-  };
-
-  // Lancer quand visible à l'écran
-  let started = false;
-  window.addEventListener('scroll', () => {
-    const section = document.querySelector('.counter');
-    if (section.getBoundingClientRect().top < window.innerHeight && !started) {
-      animateCounters();
-      started = true;
-    }
-  });
-</script>
-
- <!-- Services -->   
-<section id="services" class="py-20 bg-gray-950 text-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">Nos services</h2>
-
-    <div id="carousel-services" class="relative min-h-[400px]">
-      <!-- Groupe 1 -->
-      <div class="group fade grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Clips Lyrics -->
-        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
-          <i class="fas fa-closed-captioning text-purple-400 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Clips Lyrics</h3>
-          <p>Réalisation de clips lyrics animés, avec paroles synchronisées et visuels captivants.</p>
-        </div>
-        <!-- TikTok -->
-        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
-          <i class="fab fa-tiktok text-pink-400 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Vidéos TikTok / Shorts / Reels</h3>
-          <p>Contenus courts, montage vertical, animations modernes pour percer.</p>
-        </div>
-        <!-- Boost -->
-        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
-          <i class="fas fa-rocket text-orange-400 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Boost sur nos plateformes</h3>
-          <p>Promotion via nos comptes TikTok, YouTube, Facebook et Telegram.</p>
-        </div>
-      </div>
-
-      <!-- Groupe 2 -->
-      <div class="group fade grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Covers -->
-        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
-          <i class="fas fa-paint-brush text-yellow-300 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Covers et visuels</h3>
-          <p>Création de covers pro, visuels pour réseaux et promotions.</p>
-        </div>
-        <!-- Boutique -->
-        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
-          <i class="fas fa-store text-green-400 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Promo boutique / article</h3>
-          <p>Mini-spots produits, diffusion pour générer du trafic qualifié.</p>
-        </div>
-        <!-- Dédicace -->
-        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
-          <i class="fas fa-heart text-red-500 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Dédicaces personnalisées</h3>
-          <p>Prénom intégré dans un clip lyrics ou message spécial animé.</p>
-        </div>
-      </div>
-
-      <!-- Groupe 3 -->
-      <div class="group fade grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Captation -->
-        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
-          <i class="fas fa-video text-blue-400 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Captation / Tournage</h3>
-          <p>Tournage pro, rendu cinématographique pour clips ou interviews.</p>
-        </div>
-        <!-- Montage -->
-        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
-          <i class="fas fa-cut text-cyan-400 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Montage vidéo</h3>
-          <p>Montage dynamique, effets, titrage et transitions pro.</p>
-        </div>
-        <!-- Consulting -->
-        <div class="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 transition">
-          <i class="fas fa-chalkboard-teacher text-amber-400 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Consulting artistique</h3>
-          <p>Conseils sur image, communication et diffusion musicale.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
- <!-- Section Nos Tarifs (Arence Lyrics) --> 
- <section class="tarifs-section bg-[#0f0f0f] text-white py-16 px-6 font-sans">      
-  <div class="max-w-7xl mx-auto"> 
-
-
-<!-- Section Nos Tarifs (Arence Lyrics) --> 
-
-<section class="tarifs-section bg-[#0f0f0f] text-white py-16 px-6 font-sans">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl font-extrabold text-center mb-6">Nos Tarifs</h2>
-   
- <p class="text-center text-lg text-gray-300 mb-12">
-      Trouvez ce qui vous plait
-    </p>
-
-    <!-- POUR LES ABONNÉS -->
-    <h3 class="text-2xl font-bold text-green-400 mb-6"><i class="fas fa-star"></i> Pour les Abonnés</h3>
-
-    <!-- Dédicaces personnalisées -->
-    <h4 class="text-xl font-bold text-blue-400 mb-2"><i class="fas fa-microphone-alt"></i> Dédicaces personnalisées</h4>
-    <div class="grid gap-6 md:grid-cols-3 mb-12">
-      <!-- Basique -->
-      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in">
-        <h5 class="text-lg font-semibold">Basique</h5>
-        <p class="text-xl font-bold my-2">2 000 FCFA</p>
-        <ul class="space-y-1 mb-4 text-sm text-gray-300">
-          <li><i class="fas fa-check text-green-400"></i> Message simple</li>
-          <li><i class="fas fa-check text-green-400"></i> Choix de chanson</li>
-          <li><i class="fas fa-times text-red-400"></i> Ambiance</li>
-          <li><i class="fas fa-times text-red-400"></i> Personnalisation</li>
-        </ul>
-        <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander</a>
-      </div>
-
-      <!-- Standard -->
-      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in">
-        <h5 class="text-lg font-semibold">Standard</h5>
-        <p class="text-xl font-bold my-2">4 500 FCFA</p>
-        <ul class="space-y-1 mb-4 text-sm text-gray-300">
-          <li><i class="fas fa-check text-green-400"></i> Message simple</li>
-          <li><i class="fas fa-check text-green-400"></i> Choix de chanson</li>
-          <li><i class="fas fa-check text-green-400"></i> Ambiance</li>
-          <li><i class="fas fa-times text-red-400"></i> Mention en description</li>
-        </ul>
-        <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander</a>
-      </div>
-
-      <!-- Premium -->
-      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in border-2 border-yellow-400">
-        <h5 class="text-lg font-semibold">Premium <span class="bg-yellow-400 text-black text-xs px-2 py-0.5 rounded ml-2 animate-pulse">Recommandé</span></h5>
-        <p class="text-xl font-bold my-2">8 000 FCFA</p>
-        <ul class="space-y-1 mb-4 text-sm text-gray-300">
-          <li><i class="fas fa-check text-green-400"></i> Message personnalisé</li>
-          <li><i class="fas fa-check text-green-400"></i> Choix de chanson</li>
-          <li><i class="fas fa-check text-green-400"></i> Ambiance</li>
-          <li><i class="fas fa-check text-green-400"></i> Mention en description</li>
-          <li><i class="fas fa-check text-green-400"></i> Offre spéciale</li>
-        </ul>
-        <a href="https://wa.me/241065616406" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-300 block text-center font-semibold">Commander</a>
-      </div>
-    </div>
-
-    <!-- Clips courts -->
-    <h4 class="text-xl font-bold text-blue-400 mb-2"><i class="fas fa-film"></i> Clip lyrics court</h4>
-    <div class="grid gap-6 md:grid-cols-2 mb-12">
-      <!-- Starter -->
-      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in">
-        <h5 class="text-lg font-semibold">Starter</h5>
-        <p class="text-xl font-bold my-2">2 000 FCFA</p>
-        <ul class="space-y-1 mb-4 text-sm text-gray-300">
-          <li><i class="fas fa-check text-green-400"></i> Clip court</li>
-          <li><i class="fas fa-times text-red-400"></i> Personnalisation</li>
-          <li><i class="fas fa-check text-green-400"></i> Format TikTok / Reels</li>
-        </ul>
-        <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander</a>
-      </div>
-
-      <!-- Premium -->
-      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in">
-        <h5 class="text-lg font-semibold">Premium</h5>
-        <p class="text-xl font-bold my-2">6 000 FCFA</p>
-        <ul class="space-y-1 mb-4 text-sm text-gray-300">
-          <li><i class="fas fa-check text-green-400"></i> Clip court</li>
-          <li><i class="fas fa-check text-green-400"></i> Personnalisation</li>
-          <li><i class="fas fa-check text-green-400"></i> Format TikTok / Reels</li>
-        </ul>
-        <a href="https://wa.me/241065616406" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 block text-center">Commander</a>
-      </div>
-    </div>
-
-    <!-- POUR LES ARTISTES -->
-    <h3 class="text-2xl font-bold text-purple-400 mb-6"><i class="fas fa-music"></i> Pour les Artistes</h3>
-
-    <div class="grid gap-6 md:grid-cols-2">
-      <!-- Start’Art -->
-      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-xl border border-blue-500 animate-fade-in">
-        <h5 class="text-lg font-semibold">Start’Art <span class="text-blue-400 text-xs ml-1 animate-pulse">(Recommandé)</span></h5>
-        <p class="text-sm text-gray-400 italic mb-2">Clip lyrics simple pour débuter</p>
-        <ul class="space-y-1 mb-4 text-sm text-gray-300">
-          <li><i class="fas fa-check text-green-400"></i> Clip lyrics complet</li>
-          <li><i class="fas fa-check text-green-400"></i> Personnalisation simple</li>
-          <li><i class="fas fa-check text-green-400"></i> Style épuré & dynamique</li>
-        </ul>
-        <a href="https://wa.me/241065616406" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400 block text-center font-semibold">Demander un devis</a>
-      </div>
-
-      <!-- Engagé -->
-      <div class="bg-[#1a1a1a] rounded-xl p-6 shadow-lg animate-fade-in">
-        <h5 class="text-lg font-semibold">Engagé</h5>
-        <p class="text-sm text-gray-400 italic mb-2">Clip lyrics pro avec storytelling</p>
-        <ul class="space-y-1 mb-4 text-sm text-gray-300">
-          <li><i class="fas fa-check text-green-400"></i> Clip lyrics professionnel</li>
-          <li><i class="fas fa-check text-green-400"></i> Personnalisation complète</li>
-          <li><i class="fas fa-check text-green-400"></i> Intégration artistique</li>
-          <li><i class="fas fa-check text-green-400"></i> Mini-promo offerte</li>
-        </ul>
-        <a href="https://wa.me/241065616406" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-400 block text-center font-semibold">Demander un devis</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Section Nos Qualités -->
-<section class="bg-[#0a0a0a] text-white py-20 px-6 font-sans">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Nos Qualités</h2>
-    <p class="text-gray-400 text-lg mb-12">L’excellence, notre priorité pour booster votre présence</p>
-
-    <div class="grid gap-10 md:grid-cols-3">
-      
-      <!-- Qualité 1 -->
-      <div class="bg-[#121212] p-6 rounded-xl shadow-lg hover:shadow-blue-500/30 transition duration-300 animate-fade-in">
-        <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-star"></i></div>
-        <h3 class="text-xl font-semibold mb-2">N°1 au Gabon</h3>
-        <p class="text-gray-400 text-sm">
-          Arence Lyrics est l’agence leader pour mettre en lumière les artistes débutants et indépendants gabonais. Avec des clips lyrics percutants, une diffusion sur mesure et un réseau solide, nous offrons une visibilité réelle et qualitative à votre talent.
-        </p>
-      </div>
-
-      <!-- Qualité 2 -->
-      <div class="bg-[#121212] p-6 rounded-xl shadow-lg hover:shadow-blue-500/30 transition duration-300 animate-fade-in">
-        <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-bolt"></i></div>
-        <h3 class="text-xl font-semibold mb-2">Dynamique & Réactif</h3>
-        <p class="text-gray-400 text-sm">
-          Chaque artiste, chaque projet compte. Nous nous adaptons à vos demandes avec rapidité, efficacité et un vrai sens de l’écoute. Parce que vos efforts méritent d’être valorisés sans attendre.
-        </p>
-      </div>
-
-      <!-- Qualité 3 -->
-      <div class="bg-[#121212] p-6 rounded-xl shadow-lg hover:shadow-blue-500/30 transition duration-300 animate-fade-in">
-        <div class="text-blue-500 text-4xl mb-4"><i class="fas fa-globe"></i></div>
-        <h3 class="text-xl font-semibold mb-2">Accompagnement digital</h3>
-        <p class="text-gray-400 text-sm">
-          En plus de la musique, Totti Clarence avec notre agence Connecté & Créatif vous aidons à comprendre et exploiter les outils du web : création de visuels, sites, réseaux sociaux, publications. Nous sommes plus qu’une agence lyrics, un vrai allié numérique.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section style="margin-top: 4rem; text-align: center;">
-
-  <!-- Titre au-dessus de l'image -->
-  <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">
-    Carty - Ndolo / Fuck
-  </h2>
-
-  <!-- Image plein format -->
-  <div style="
-    background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYeOICj5hI7Tx__JStTxB86lSY5dp97KSo0lnF4T_-H4kryOLtH4M6TbfW0QY6nNxkFHZ7j3MLm6GZPXOswbDYZlKG6N08l3-wrfpOZEABpuBkzsaO4h-lPGKUTkm54ZXkrVtWczf6oJ8TExKyr5PcpOXMnEZzR3jiDGcYJylUQwsYoyZxROJ5g_92U4Y/s486/486x486bb.png');
-    background-size: cover;
-    background-position: center;
-    height: 300px;
-    border-radius: 1rem;
-    margin: 0 auto;
-    max-width: 500px;
-  ">
-  </div>
-
-  <!-- Bouton centré -->
-  <a href="https://arencelyrics.blogspot.com/" target="_blank" style="
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #3b82f6;
-    color: white;
-    border-radius: 9999px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  " onmouseover="this.style.backgroundColor='#2563eb'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#3b82f6'; this.style.transform='scale(1)'">
-    Consulter les paroles
-  </a>
-
-  <!-- Bannière descriptive -->
-  <div style="
-    margin-top: 2rem;
-    background-color: #111827;
-    color: white;
-    padding: 2rem 1rem;
-    border-radius: 1rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  ">
-    <p style="font-size: 1.125rem;">
-      Clarence Lyrics te propose des lyrics gabonaises et internationales, à jour et faciles à lire.
-    </p>
-  </div>
-
-</section>
+    </section><!--/#about-->
+
+    <section id="services" >
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Our Services</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
+
+            <div class="row">
+                <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-futbol-o"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Mobile App</h4>
+                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-compass"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Custom App</h4>
+                                <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-database"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">E-Commerce</h4>
+                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="300ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bar-chart"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">CMS App</h4>
+                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="400ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-paper-plane-o"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Product Dev</h4>
+                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="500ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullseye"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">SharePoint</h4>
+                                <p>Morbi vitae tortor tempus, placerat leo et, suscipit lectus. Phasellus ut euismod massa, eu eleifend ipsum.</p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                </div>
+            </div><!--/.row-->    
+        </div><!--/.container-->
+    </section><!--/#services-->
+
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Our Works</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
+
+            <div class="text-center">
+                <ul class="portfolio-filter">
+                    <li><a class="active" href="#" data-filter="*">All Works</a></li>
+                    <li><a href="#" data-filter=".designing">Designing</a></li>
+                    <li><a href="#" data-filter=".mobile">Mobile App</a></li>
+                    <li><a href="#" data-filter=".development">Development</a></li>
+                </ul><!--/#portfolio-filter-->
+            </div>
+
+            <div class="portfolio-items">
+                <div class="portfolio-item designing">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/01.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Project Name</h3>
+                            Some description..
+                            <a class="preview" href="images/portfolio/01.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item mobile development">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/02.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Project Name</h3>
+                             Some description..
+                            <a class="preview" href="images/portfolio/02.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item designing">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/03.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Project Name</h3>
+                             Some description..
+                            <a class="preview" href="images/portfolio/03.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item mobile">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/04.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Project Name</h3>
+                            Some description..
+                            <a class="preview" href="images/portfolio/04.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item designing development">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/05.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Project Name</h3>
+                             Some description..
+                            <a class="preview" href="images/portfolio/05.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item mobile">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/06.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Project Name</h3>
+                             Some description..
+                            <a class="preview" href="images/portfolio/06.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item designing development">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/07.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Project Name</h3>
+                             Some description..
+                            <a class="preview" href="images/portfolio/07.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                <div class="portfolio-item mobile">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/portfolio/08.jpg" alt="">
+                        <div class="portfolio-info">
+                            <h3>Project Name</h3>
+                             Some description..
+                            <a class="preview" href="images/portfolio/08.jpg" rel="prettyPhoto"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div><!--/.portfolio-item-->
+            </div>
+        </div><!--/.container-->
+    </section><!--/#portfolio-->
 
    
    
- <!-- Contact -->   
- <section id="contact" class="py-20 px-6 text-center bg-black">      
-    <h3 class="text-3xl font-bold mb-4">Contactez-nous</h3>      
-    <p class="mb-6 text-gray-300">Une idée ? Un projet ? Discutons-en.</p>      
-    <a href="mailto:arencefilm@gmail.com" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition">Envoyer un e-mail</a>      
-  </section> 
+    <section id="our-team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Amazing Team</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
+			
+			 	
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/01.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>John Deo</h3>
+                            <span>Founder</span>
+							<p>Personalized trai access rcises, amin ders  malesuada id dolor non, elemen tum auctor arcu. Cras consectet</p>
+                        </div> 
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/02.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Mike Timobbs</h3>
+                            <span>President</span>
+							<p>Personalized trai access rcises, amin ders  malesuada id dolor non, elemen tum auctor arcu. Cras consectet</p>
+                        </div> 
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/03.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Remo Silvaus</h3>
+                            <span>Architect</span>
+							<p>Personalized trai access rcises, amin ders  malesuada id dolor non, elemen tum auctor arcu. Cras consectet</p>
+                        </div> 
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="team-img">
+                            <img class="img-responsive" src="images/team/04.jpg" alt="">
+                        </div>
+                        <div class="team-info">
+                            <h3>Niscal Deon</h3>
+                            <span>Manager</span>
+							<p>Personalized trai access rcises, amin ders  malesuada id dolor non, elemen tum auctor arcu. Cras consectet</p>
+                        </div> 
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Footer allégé et centré sans arrière-plan trop marqué -->
-<footer class="text-white py-6 px-4">
-  <div class="max-w-6xl mx-auto text-center space-y-3">
+        </div>
+    </section><!--/#our-team-->
 
-    <!-- Titre principal -->
-    <h2 class="text-xl font-bold">Clarence</h2>
-    <p class="text-gray-400 text-sm">Agence digitale créative & engagée</p>
+    <section id="business-stats">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Business Stats</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
 
-    <!-- Nos filiales -->
-    <p class="font-semibold text-sm mt-4">Nos filiales</p>
-    <p class="text-sm text-gray-400">Clarence Lyrics | Clarence Films | Clarence Lyrics G & C</p>
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <div class="business-stats" data-digit="6850" data-duration="1000"></div>
+                        <strong>Clients</strong>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="100ms">
+                        <div class="business-stats" data-digit="1465" data-duration="1000"></div>
+                        <strong>Completed</strong>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <div class="business-stats" data-digit="4325" data-duration="1000"></div>
+                        <strong>In Progress</strong>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow fadeInUp" data-wow-duration="400ms" data-wow-delay="300ms">
+                        <div class="business-stats" data-digit="2568" data-duration="1000"></div>
+                        <strong>Revenue</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#business-stats-->
 
-    <!-- Nos secteurs -->
-    <p class="font-semibold text-sm mt-2">Nos secteurs</p>
-    <p class="text-sm text-gray-400">Création de contenu | Musique | Stratégie digitale</p>
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Pricing</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
 
-    <!-- Liens -->
-    <div class="flex justify-center gap-6 text-sm mt-4">
-      <a href="#accueil" class="hover:text-blue-400 transition">Accueil</a>
-      <a href="#services" class="hover:text-blue-400 transition">Services</a>
-      <a href="#tarifs" class="hover:text-blue-400 transition">Tarifs</a>
-      <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
-    </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="0ms">
+                        <ul class="pricing">
+                            <li class="plan-header">
+                                <div class="price-duration">
+                                    <span class="price">
+                                        $45
+                                    </span>
+                                    <span class="duration">
+                                        per month
+                                    </span>
+                                </div>
 
-    <!-- Réseaux -->
-    <div class="flex justify-center gap-4 mt-3 text-lg">
-      <a href="#"><i class="fab fa-tiktok hover:text-pink-400"></i></a>
-      <a href="#"><i class="fab fa-youtube hover:text-red-500"></i></a>
-      <a href="#"><i class="fab fa-whatsapp hover:text-green-500"></i></a>
-      <a href="#"><i class="fas fa-music hover:text-yellow-400"></i></a>
-      <a href="#"><i class="fas fa-download hover:text-blue-300"></i></a>
-    </div>
+                                <div class="plan-name">
+                                    Basic
+                                </div>
+                            </li>
+                            <li><strong>1</strong> DOMAIN</li>
+                            <li><strong>100GB</strong> DISK SPACE</li>
+                            <li><strong>UNLIMITED</strong> BANDWIDTH</li>
+                            <li>SHARED SSL CERTIFICATE</li>
+                            <li><strong>10</strong> EMAIL ADDRESS</li>
+                            <li><strong>24/7</strong> SUPPORT</li>
+                            <li class="plan-purchase"><a class="btn btn-primary" href="#">Get It Now!</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="200ms">
+                        <ul class="pricing featured">
+                            <li class="plan-header">
+                                <div class="price-duration">
+                                    <span class="price">
+                                        $85
+                                    </span>
+                                    <span class="duration">
+                                        per month
+                                    </span>
+                                </div>
 
-    <!-- Bas de page -->
-    <p class="text-gray-500 text-xs mt-3">© 2025 Clarence. Tous droits réservés.</p>
-  </div>
-</footer>
+                                <div class="plan-name">
+                                    Business
+                                </div>
+                            </li>
+                            <li><strong>5</strong> DOMAIN</li>
+                            <li><strong>500GB</strong> DISK SPACE</li>
+                            <li><strong>UNLIMITED</strong> BANDWIDTH</li>
+                            <li>SHARED SSL CERTIFICATE</li>
+                            <li><strong>30</strong> EMAIL ADDRESS</li>
+                            <li><strong>24/7</strong> SUPPORT</li>
+                            <li class="plan-purchase"><a class="btn btn-primary" href="#">Get It Now!</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="400ms">
+                        <ul class="pricing">
+                            <li class="plan-header">
+                                <div class="price-duration">
+                                    <span class="price">
+                                        $125
+                                    </span>
+                                    <span class="duration">
+                                        per month
+                                    </span>
+                                </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: false
-  });
-</script>
+                                <div class="plan-name">
+                                    Professional
+                                </div>
+                            </li>
+                            <li><strong>10</strong> DOMAIN</li>
+                            <li><strong>2GB</strong> DISK SPACE</li>
+                            <li><strong>UNLIMITED</strong> BANDWIDTH</li>
+                            <li>SHARED SSL CERTIFICATE</li>
+                            <li><strong>50</strong> EMAIL ADDRESS</li>
+                            <li><strong>24/7</strong> SUPPORT</li>
+                            <li class="plan-purchase"><a class="btn btn-primary" href="#">Get It Now!</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="600ms">
+                        <ul class="pricing">
+                            <li class="plan-header">
+                                <div class="price-duration">
+                                    <span class="price">
+                                        $185
+                                    </span>
+                                    <span class="duration">
+                                        per month
+                                    </span>
+                                </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const groups = document.querySelectorAll(".group");
-    const dotsContainer = document.getElementById("carousel-dots");
-    let current = 0;
-    let interval;
-ah
-    // Créer les points
-    groups.forEach((_, i) => {
-      const dot = document.createElement("div");
-      dot.className = "dot";
-      dot.addEventListener("click", () => showGroup(i));
-      dotsContainer.appendChild(dot);
-    });
+                                <div class="plan-name">
+                                    Extended
+                                </div>
+                            </li>
+                            <li><strong>15</strong> DOMAIN</li>
+                            <li><strong>10GB</strong> DISK SPACE</li>
+                            <li><strong>UNLIMITED</strong> BANDWIDTH</li>
+                            <li>SHARED SSL CERTIFICATE</li>
+                            <li><strong>100</strong> EMAIL ADDRESS</li>
+                            <li><strong>24/7</strong> SUPPORT</li>
+                            <li class="plan-purchase"><a class="btn btn-primary" href="#">Get It Now!</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#pricing-->
 
-    const updateDots = () => {
-      const dots = dotsContainer.querySelectorAll(".dot");
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === current);
-      });
-    };
+    <section class="testimonial-area" id="testimonial">
+			<div class="container">
+				<div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Testimonial</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="single-testimonial animate_fade_in" style="opacity: 1; right: 0px;">
+							<div class="row">
+								<div class="col-xs-12">
+									<blockquote>Contrary to popular belief, Lorem Ipsuis no simply random text. It has roots in a piece of classical Layears old. belief, Lorem Ipsuis not simply</blockquote>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									<img src="images/pic1.jpg" alt="client">
+								</div>
+								<div class="col-xs-9 half-gutter">
+									<h5>James Bond</h5>
+									<h6>License to Drink Inc</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="single-testimonial animate_fade_in" style="opacity: 1; right: 0px;">
+							<div class="row">
+								<div class="col-xs-12">
+									<blockquote>Contrary to popular belief, Lorem Ipsuis no simply random text. It has roots in a piece of classical Layears old. belief, Lorem Ipsuis not simply</blockquote>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									<img src="images/pic2.jpg" alt="client">
+								</div>
+								<div class="col-xs-9 half-gutter">
+									<h5>James Bond</h5>
+									<h6>License to Drink Inc</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="single-testimonial animate_fade_in" style="opacity: 1; right: 0px;">
+							<div class="row">
+								<div class="col-xs-12">
+									<blockquote>Contrary to popular belief, Lorem Ipsuis no simply random text. It has roots in a piece of classical Layears old. belief, Lorem Ipsuis not simply</blockquote>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-3">
+									<img src="images/pic1.jpg" alt="client">
+								</div>
+								<div class="col-xs-9 half-gutter">
+									<h5>James Bond</h5>
+									<h6>License to Drink Inc</h6>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    <section id="contact-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">Contact Us</h2>
+                <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget risus vitae massa <br> semper aliquam quis mattis quam.</p>
+            </div>
+        </div>
+    </section><!--/#contact-us-->
 
-    const showGroup = (i) => {
-      groups.forEach(g => g.classList.remove("show"));
-      groups[i].classList.add("show");
-      current = i;
-      updateDots();
-    };
 
-    const nextGroup = () => {
-      showGroup((current + 1) % groups.length);
-    };
+    <section id="contact">
+        
+        <div class="container">
+            <div class="container contact-info">
+                <div class="row">
+				  <div class="col-sm-4 col-md-4">
+                        <div class="contact-form">
+                            <h3>Contact Info</h3>
 
-    const startAutoSlide = () => {
-      interval = setInterval(nextGroup, 11000);
-    };
+                            <address>
+                              <strong>Amazing Company, Inc.</strong><br>
+                              12345 NewYork, Street 125<br>
+                              United States 94107<br>
+                              <abbr title="Phone">P:</abbr> (123) 456-7890
+                            </address>
+					</div></div>
+                    <div class="col-sm-8 col-md-8">
+                        <div class="contact-form">
+                       
+                            <form id="main-contact-form" name="contact-form" method="post" action="#">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" class="form-control" rows="8" placeholder="Message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+   </section><!--/#bottom-->
 
-    // Swipe
-    let startX = 0;
-    document.getElementById("carousel-services").addEventListener("touchstart", e => {
-      startX = e.touches[0].clientX;
-    });
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2015 Company Name. Template by <a target="_blank" href="http://webthemez.com/" title="Free Bootstrap Themes and HTML Templates">WebThemez.com</a>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
 
-    document.getElementById("carousel-services").addEventListener("touchend", e => {
-      const endX = e.changedTouches[0].clientX;
-      if (endX - startX > 50) {
-        showGroup((current - 1 + groups.length) % groups.length);
-      } else if (startX - endX > 50) {
-        nextGroup();
-      }
-    });
-
-    // Init
-    showGroup(0);
-    startAutoSlide();
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const groups = document.querySelectorAll(".group");
-    let current = 0;
-
-    const showGroup = (index) => {
-      groups.forEach((group, i) => {
-        group.classList.remove("show");
-        if (i === index) group.classList.add("show");
-      });
-    };
-
-    const nextGroup = () => {
-      current = (current + 1) % groups.length;
-      showGroup(current);
-    };
-
-    // Initialisation
-    showGroup(current);
-    setInterval(nextGroup, 5000);
-  });
-</script>
-
-<script>
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const bars = menuBtn.querySelectorAll(".bar");
-
-  // Création du fond flouté
-  const blurOverlay = document.createElement("div");
-  blurOverlay.className = "fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-40 hidden";
-  document.body.appendChild(blurOverlay);
-
-  menuBtn.addEventListener("click", () => {
-    const isHidden = mobileMenu.classList.contains("hidden");
-
-    mobileMenu.classList.toggle("hidden");
-    blurOverlay.classList.toggle("hidden");
-
-    // Animation des barres
-    bars[0].classList.toggle("rotate-45");
-    bars[1].classList.toggle("opacity-0");
-    bars[2].classList.toggle("-rotate-45");
-  });
-
-  // Fermer le menu en cliquant sur le fond flouté
-  blurOverlay.addEventListener("click", () => {
-    mobileMenu.classList.add("hidden");
-    blurOverlay.classList.add("hidden");
-    bars[0].classList.remove("rotate-45");
-    bars[1].classList.remove("opacity-0");
-    bars[2].classList.remove("-rotate-45");
-  });
-</script>
-
- </body>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/mousescroll.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/jquery.inview.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom-scripts.js"></script>
+</body>
 </html>
