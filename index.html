@@ -1,220 +1,191 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clarence Studio</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <!-- Ton CSS -->
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Header sticky */
-    header.sticky-top {
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(10px);
-      z-index: 9999;
-    }
-    header .navbar-nav .nav-link {
-      color: #fff;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    header .navbar-nav .nav-link:hover {
-      color: #0d6efd;
-    }
-    header .btn-contact {
-      background-color: #0d6efd;
-      color: #fff;
-      border-radius: 50px;
-      padding: 0.5rem 1.5rem;
-      transition: background-color 0.3s;
-    }
-    header .btn-contact:hover {
-      background-color: #0056b3;
-    }
-    /* Fade-up animation */
-    .fade-up { opacity: 0; transform: translateY(20px); transition: all 1s ease-out; }
-    .fade-up.appear { opacity: 1; transform: translateY(0); }
-    .text-shadow { text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symphony Arts - Label, Distribution & Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, #8E2DE2, #4A00E0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
 </head>
-<body style="font-family: 'Roboto', sans-serif;">
+<body class="flex flex-col min-h-screen">
 
-  <!-- ===== HEADER / NAVIGATION ===== -->
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg navbar-dark container">
-      <a class="navbar-brand fw-bold" href="#">
-        <img src="images/logo.png" alt="Clarence Studio" height="50">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item"><a class="nav-link" href="#hero">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Réalisations</a></li>
-          <li class="nav-item"><a class="nav-link" href="#testimonials">Témoignages</a></li>
-          <li class="nav-item"><a class="nav-link btn-contact ms-3" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <!-- ===== HERO / ACCUEIL ===== -->
-  <section id="hero" class="hero d-flex align-items-center justify-content-center text-center text-white vh-100" style="background: url('images/hero-bg.jpg') center/cover no-repeat;">
-    <div class="container fade-up">
-      <h1 class="display-3 fw-bold text-shadow">Clarence Studio</h1>
-      <p class="lead mt-3 text-shadow">
-        Label de musique, distributeur digital et studio créatif.  
-        Nous transformons vos idées artistiques en projets professionnels.
-      </p>
-      <a href="#services" class="btn btn-primary btn-lg mt-4 shadow-lg rounded-pill px-4">Découvrir nos services</a>
-    </div>
-  </section>
-
-  <!-- ===== À PROPOS ===== -->
-  <section id="about" class="py-5 bg-light">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 fade-up">
-          <h2 class="fw-bold mb-4 text-primary">À propos de Clarence Studio</h2>
-          <p>
-            Clarence Studio est le carrefour de la musique et de l’image. Nous accompagnons les artistes dans toutes les étapes : enregistrement, production, diffusion et création de visuels.
-          </p>
-          <p>
-            Notre équipe multidisciplinaire vous garantit un suivi complet pour chaque projet, alliant créativité, professionnalisme et innovation. Chaque artiste bénéficie d’un accompagnement personnalisé pour révéler son univers unique.
-          </p>
-        </div>
-        <div class="col-md-6 fade-up">
-          <img src="images/about.jpg" alt="Clarence Studio" class="img-fluid rounded shadow-lg">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SERVICES ===== -->
-  <section id="services" class="py-5">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-5 text-primary fade-up">Nos Services</h2>
-      <div class="row g-4">
-        <div class="col-md-4 fade-up">
-          <div class="card h-100 shadow-lg border-0 rounded-4">
-            <div class="card-body">
-              <h4 class="card-title text-primary">🎵 Label de Musique</h4>
-              <p>
-                Accompagnement complet de l’écriture à la promotion, pour donner vie à vos projets musicaux avec un suivi professionnel.
-              </p>
+    <!-- En-tête de navigation -->
+    <header class="bg-black bg-opacity-70 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-xl md:text-2xl font-bold text-white transition-transform transform hover:scale-105">Symphony Arts</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#label" class="text-white hover:text-purple-400 transition-colors">Label de musique</a>
+                <a href="#distribution" class="text-white hover:text-purple-400 transition-colors">Distribution</a>
+                <a href="#studio" class="text-white hover:text-purple-400 transition-colors">Studio</a>
+                <a href="#management" class="text-white hover:text-purple-400 transition-colors">Management</a>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4 fade-up">
-          <div class="card h-100 shadow-lg border-0 rounded-4">
-            <div class="card-body">
-              <h4 class="card-title text-primary">🌍 Distribution Digitale</h4>
-              <p>
-                Mise à disposition de vos titres sur Spotify, Apple Music, Deezer et plus, avec gestion complète des aspects techniques et administratifs.
-              </p>
+            <!-- Bouton du menu mobile -->
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 py-4">
+            <div class="flex flex-col items-center space-y-4">
+                <a href="#label" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2">Label de musique</a>
+                <a href="#distribution" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2">Distribution</a>
+                <a href="#studio" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2">Studio</a>
+                <a href="#management" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2">Management</a>
             </div>
-          </div>
         </div>
-        <div class="col-md-4 fade-up">
-          <div class="card h-100 shadow-lg border-0 rounded-4">
-            <div class="card-body">
-              <h4 class="card-title text-primary">📸 Studio Photo & Vidéo</h4>
-              <p>
-                Création de clips, shootings et visuels promotionnels pour une image artistique cohérente et percutante.
-              </p>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Section d'introduction -->
+        <section class="min-h-screen flex items-center justify-center text-center px-4" style="background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Votre+Image+Principale'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <div class="bg-black bg-opacity-70 p-8 md:p-12 rounded-lg shadow-2xl max-w-2xl transform transition-transform duration-500 ease-out hover:scale-105">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Donner vie à votre créativité
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-6">
+                    Symphony Arts est votre partenaire pour la musique, la vidéo, et le développement artistique.
+                </p>
+                <a href="#label" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-110">
+                    Découvrir nos services
+                </a>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </section>
 
-  <!-- ===== PORTFOLIO ===== -->
-  <section id="portfolio" class="py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-5 text-primary fade-up">Réalisations</h2>
-      <div class="row g-4">
-        <div class="col-md-4 fade-up">
-          <img src="images/project1.jpg" alt="Clip vidéo" class="img-fluid rounded shadow-lg">
-          <h5 class="mt-3">Clip Officiel – Artiste X</h5>
-        </div>
-        <div class="col-md-4 fade-up">
-          <img src="images/project2.jpg" alt="Shooting photo" class="img-fluid rounded shadow-lg">
-          <h5 class="mt-3">Shooting Studio – Artiste Y</h5>
-        </div>
-        <div class="col-md-4 fade-up">
-          <img src="images/project3.jpg" alt="Album distribué" class="img-fluid rounded shadow-lg">
-          <h5 class="mt-3">Album Distribué – Artiste Z</h5>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Section Label de musique -->
+        <section id="label" class="py-20 px-6 container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
+                Label de musique
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Carte d'artiste 1 -->
+                <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
+                    <img src="https://placehold.co/400x400/212121/FFFFFF?text=Artiste+1" alt="Artiste 1" class="rounded-lg mb-4 w-full h-auto object-cover">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Nom de l'artiste</h3>
+                    <p class="text-gray-400">Genre musical</p>
+                    <a href="#" class="mt-4 inline-block text-purple-400 hover:text-purple-200 transition-colors">En savoir plus</a>
+                </div>
+                <!-- Carte d'artiste 2 -->
+                <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
+                    <img src="https://placehold.co/400x400/212121/FFFFFF?text=Artiste+2" alt="Artiste 2" class="rounded-lg mb-4 w-full h-auto object-cover">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Nom de l'artiste</h3>
+                    <p class="text-gray-400">Genre musical</p>
+                    <a href="#" class="mt-4 inline-block text-purple-400 hover:text-purple-200 transition-colors">En savoir plus</a>
+                </div>
+                <!-- Carte d'artiste 3 -->
+                <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
+                    <img src="https://placehold.co/400x400/212121/FFFFFF?text=Artiste+3" alt="Artiste 3" class="rounded-lg mb-4 w-full h-auto object-cover">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Nom de l'artiste</h3>
+                    <p class="text-gray-400">Genre musical</p>
+                    <a href="#" class="mt-4 inline-block text-purple-400 hover:text-purple-200 transition-colors">En savoir plus</a>
+                </div>
+            </div>
+        </section>
 
-  <!-- ===== TÉMOIGNAGES ===== -->
-  <section id="testimonials" class="py-5">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-5 text-primary fade-up">Témoignages</h2>
-      <div class="row g-4">
-        <div class="col-md-4 fade-up">
-          <blockquote class="blockquote shadow-sm p-3 rounded">
-            <p>“Grâce à Clarence Studio, j’ai pu sortir mon premier single et toucher un public international.”</p>
-            <footer class="blockquote-footer">Artiste A</footer>
-          </blockquote>
-        </div>
-        <div class="col-md-4 fade-up">
-          <blockquote class="blockquote shadow-sm p-3 rounded">
-            <p>“Un accompagnement complet et humain. J’ai trouvé bien plus qu’un label : une vraie famille artistique.”</p>
-            <footer class="blockquote-footer">Artiste B</footer>
-          </blockquote>
-        </div>
-        <div class="col-md-4 fade-up">
-          <blockquote class="blockquote shadow-sm p-3 rounded">
-            <p>“Le studio photo/vidéo est incroyable ! Mes visuels ont enfin le rendu professionnel que je cherchais.”</p>
-            <footer class="blockquote-footer">Artiste C</footer>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Section de distribution -->
+        <section id="distribution" class="bg-zinc-900 py-20 px-6 container mx-auto rounded-xl shadow-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
+                Distribution de musique
+            </h2>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Atteignez votre public</h3>
+                    <p class="text-gray-300 mb-6">
+                        Nous distribuons votre musique sur toutes les principales plateformes de streaming et de téléchargement.
+                        Maximisez vos revenus et votre visibilité grâce à notre réseau étendu.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>Spotify, Apple Music, Deezer et plus de 150 autres magasins</li>
+                        <li>Tableaux de bord analytiques pour suivre vos performances</li>
+                        <li>Paiements mensuels clairs et transparents</li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/600x400/212121/FFFFFF?text=Distribution" alt="Graphique de distribution" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </section>
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="py-5 bg-light">
-    <div class="container text-center fade-up">
-      <h2 class="fw-bold mb-5 text-primary">Contactez-nous</h2>
-      <p class="mb-4">
-        Vous êtes artiste, producteur ou créatif ? Rejoignez Clarence Studio et donnez une nouvelle dimension à vos projets musicaux et visuels.
-      </p>
-      <a href="mailto:contact@clarencestudio.com" class="btn btn-primary btn-lg shadow-lg rounded-pill px-4">Écrire un email</a>
-    </div>
-  </section>
+        <!-- Section Studio photo et vidéo -->
+        <section id="studio" class="py-20 px-6 container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
+                Studio photo & vidéo
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Clips musicaux</h3>
+                    <p class="text-gray-400">Production de clips musicaux professionnels qui captent l'essence de votre musique.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Photographie de portraits</h3>
+                    <p class="text-gray-400">Séances photo pour artistes, pochettes d'albums et matériel promotionnel.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Sessions de performance</h3>
+                    <p class="text-gray-400">Captures en direct et vidéos de performance en studio pour votre portfolio.</p>
+                </div>
+            </div>
+        </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="py-4 bg-dark text-white text-center">
-    <p class="mb-0">&copy; 2025 Clarence Studio – Tous droits réservés.</p>
-  </footer>
+        <!-- Section Management artistique -->
+        <section id="management" class="bg-zinc-900 py-20 px-6 container mx-auto rounded-xl shadow-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
+                Management artistique
+            </h2>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/2 order-2 md:order-1">
+                    <img src="https://placehold.co/600x400/212121/FFFFFF?text=Management+Artistique" alt="Management Artistique" class="rounded-xl shadow-lg">
+                </div>
+                <div class="md:w-1/2 order-1 md:order-2">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Développez votre carrière</h3>
+                    <p class="text-gray-300 mb-6">
+                        Nous offrons un management personnalisé pour aider les artistes à naviguer dans l'industrie musicale.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2">
+                        <li>Planification de la carrière et stratégie à long terme</li>
+                        <li>Négociation de contrats et de partenariats</li>
+                        <li>Conseils en marketing et image de marque</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Pied de page -->
+    <footer class="bg-black py-8 mt-12 text-center text-gray-500">
+        <p>&copy; 2024 Symphony Arts. Tous droits réservés.</p>
+    </footer>
 
-  <!-- Animation au scroll -->
-  <script>
-    const faders = document.querySelectorAll('.fade-up');
-    const appearOptions = { threshold: 0.2 };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("appear");
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-    faders.forEach(fader => { appearOnScroll.observe(fader); });
-  </script>
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fermer le menu mobile lors d'un clic sur un lien
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
+
