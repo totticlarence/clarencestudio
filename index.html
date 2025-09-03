@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +18,13 @@
             background-clip: text;
             color: transparent;
         }
+        .scrolling-cards::-webkit-scrollbar {
+            height: 8px;
+        }
+        .scrolling-cards::-webkit-scrollbar-thumb {
+            background-color: #4A00E0;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -26,24 +33,28 @@
     <header class="bg-black bg-opacity-70 backdrop-blur-md sticky top-0 z-50 shadow-lg">
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
             <a href="#" class="text-xl md:text-2xl font-bold text-white transition-transform transform hover:scale-105">Symphony Arts</a>
-            <div class="space-x-4 hidden md:flex">
-                <a href="#label" class="text-white hover:text-purple-400 transition-colors">Label de musique</a>
-                <a href="#distribution" class="text-white hover:text-purple-400 transition-colors">Distribution</a>
-                <a href="#studio" class="text-white hover:text-purple-400 transition-colors">Studio</a>
-                <a href="#management" class="text-white hover:text-purple-400 transition-colors">Management</a>
+            <div class="space-x-4 hidden lg:flex">
+                <a href="#artistes" class="text-white hover:text-purple-400 transition-colors">Artistes</a>
+                <a href="#projets" class="text-white hover:text-purple-400 transition-colors">Projets</a>
+                <a href="#evenements" class="text-white hover:text-purple-400 transition-colors">Événements</a>
+                <a href="#news" class="text-white hover:text-purple-400 transition-colors">Actualités</a>
+                <a href="#contact" class="text-white hover:text-purple-400 transition-colors">Contact</a>
+                <a href="#rejoindre" class="text-white hover:text-purple-400 transition-colors">Nous rejoindre</a>
             </div>
             <!-- Bouton du menu mobile -->
-            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+            <button id="menu-button" class="lg:hidden text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
         <!-- Menu mobile -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 py-4">
+        <div id="mobile-menu" class="hidden lg:hidden bg-black bg-opacity-90 py-4">
             <div class="flex flex-col items-center space-y-4">
-                <a href="#label" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2">Label de musique</a>
-                <a href="#distribution" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2">Distribution</a>
-                <a href="#studio" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2">Studio</a>
-                <a href="#management" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2">Management</a>
+                <a href="#artistes" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2" onclick="closeMenu()">Artistes</a>
+                <a href="#projets" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2" onclick="closeMenu()">Projets</a>
+                <a href="#evenements" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2" onclick="closeMenu()">Événements</a>
+                <a href="#news" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2" onclick="closeMenu()">Actualités</a>
+                <a href="#contact" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2" onclick="closeMenu()">Contact</a>
+                <a href="#rejoindre" class="text-white hover:text-purple-400 transition-colors w-full text-center py-2" onclick="closeMenu()">Nous rejoindre</a>
             </div>
         </div>
     </header>
@@ -58,16 +69,42 @@
                 <p class="text-lg md:text-xl text-gray-300 mb-6">
                     Symphony Arts est votre partenaire pour la musique, la vidéo, et le développement artistique.
                 </p>
-                <a href="#label" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-110">
+                <a href="#artistes" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-110">
                     Découvrir nos services
                 </a>
             </div>
         </section>
+        
+        <!-- Section de cartes défilantes -->
+        <section class="py-20 px-6 container mx-auto">
+            <div class="scrolling-cards flex space-x-6 overflow-x-auto pb-4">
+                <div class="flex-none w-80 bg-zinc-800 rounded-xl p-6 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Label de musique</h3>
+                    <p class="text-gray-400">Découvrez nos artistes et leurs dernières sorties.</p>
+                </div>
+                <div class="flex-none w-80 bg-zinc-800 rounded-xl p-6 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Distribution</h3>
+                    <p class="text-gray-400">Distribuez votre musique sur toutes les plateformes mondiales.</p>
+                </div>
+                <div class="flex-none w-80 bg-zinc-800 rounded-xl p-6 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Studio photo & vidéo</h3>
+                    <p class="text-gray-400">Créez des visuels professionnels pour votre projet.</p>
+                </div>
+                <div class="flex-none w-80 bg-zinc-800 rounded-xl p-6 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Management</h3>
+                    <p class="text-gray-400">Laissez-nous gérer votre carrière artistique.</p>
+                </div>
+                <div class="flex-none w-80 bg-zinc-800 rounded-xl p-6 shadow-xl transform transition-transform duration-300 hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Événements</h3>
+                    <p class="text-gray-400">Ne manquez pas nos prochains concerts et événements.</p>
+                </div>
+            </div>
+        </section>
 
-        <!-- Section Label de musique -->
-        <section id="label" class="py-20 px-6 container mx-auto">
+        <!-- Section Artistes -->
+        <section id="artistes" class="py-20 px-6 container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
-                Label de musique
+                Nos Artistes
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Carte d'artiste 1 -->
@@ -94,74 +131,119 @@
             </div>
         </section>
 
-        <!-- Section de distribution -->
-        <section id="distribution" class="bg-zinc-900 py-20 px-6 container mx-auto rounded-xl shadow-2xl">
+        <!-- Section Projets réalisés -->
+        <section id="projets" class="bg-zinc-900 py-20 px-6 container mx-auto rounded-xl shadow-2xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
-                Distribution de musique
+                Projets réalisés
             </h2>
-            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-                <div class="md:w-1/2">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">Atteignez votre public</h3>
-                    <p class="text-gray-300 mb-6">
-                        Nous distribuons votre musique sur toutes les principales plateformes de streaming et de téléchargement.
-                        Maximisez vos revenus et votre visibilité grâce à notre réseau étendu.
-                    </p>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2">
-                        <li>Spotify, Apple Music, Deezer et plus de 150 autres magasins</li>
-                        <li>Tableaux de bord analytiques pour suivre vos performances</li>
-                        <li>Paiements mensuels clairs et transparents</li>
-                    </ul>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-zinc-800 rounded-xl p-4 shadow-xl group cursor-pointer transition-transform transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/363636/FFFFFF?text=Projet+1" alt="Projet 1" class="rounded-lg mb-4 w-full h-auto object-cover group-hover:opacity-75 transition-opacity">
+                    <h3 class="text-xl font-semibold text-white">Titre du projet</h3>
+                    <p class="text-gray-400 text-sm">Description courte du projet et de l'artiste.</p>
                 </div>
-                <div class="md:w-1/2">
-                    <img src="https://placehold.co/600x400/212121/FFFFFF?text=Distribution" alt="Graphique de distribution" class="rounded-xl shadow-lg">
+                <div class="bg-zinc-800 rounded-xl p-4 shadow-xl group cursor-pointer transition-transform transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/363636/FFFFFF?text=Projet+2" alt="Projet 2" class="rounded-lg mb-4 w-full h-auto object-cover group-hover:opacity-75 transition-opacity">
+                    <h3 class="text-xl font-semibold text-white">Titre du projet</h3>
+                    <p class="text-gray-400 text-sm">Description courte du projet et de l'artiste.</p>
+                </div>
+                <div class="bg-zinc-800 rounded-xl p-4 shadow-xl group cursor-pointer transition-transform transform hover:scale-105">
+                    <img src="https://placehold.co/600x400/363636/FFFFFF?text=Projet+3" alt="Projet 3" class="rounded-lg mb-4 w-full h-auto object-cover group-hover:opacity-75 transition-opacity">
+                    <h3 class="text-xl font-semibold text-white">Titre du projet</h3>
+                    <p class="text-gray-400 text-sm">Description courte du projet et de l'artiste.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Section Studio photo et vidéo -->
-        <section id="studio" class="py-20 px-6 container mx-auto">
+        <!-- Section Événements -->
+        <section id="evenements" class="py-20 px-6 container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
-                Studio photo & vidéo
+                Événements & Billetterie
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
+            <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Clips musicaux</h3>
-                    <p class="text-gray-400">Production de clips musicaux professionnels qui captent l'essence de votre musique.</p>
+                    <h3 class="text-2xl font-semibold mb-2 text-white">Nom de l'événement</h3>
+                    <p class="text-gray-400 mb-2">Lieu, Ville | Date</p>
+                    <p class="text-gray-300">Description de l'événement : concert, festival, showcase...</p>
+                    <a href="#" class="mt-4 inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-all transform hover:scale-105">
+                        Acheter des billets
+                    </a>
                 </div>
-                <!-- Service 2 -->
                 <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Photographie de portraits</h3>
-                    <p class="text-gray-400">Séances photo pour artistes, pochettes d'albums et matériel promotionnel.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
-                    <h3 class="text-xl font-semibold mb-2 text-white">Sessions de performance</h3>
-                    <p class="text-gray-400">Captures en direct et vidéos de performance en studio pour votre portfolio.</p>
+                    <h3 class="text-2xl font-semibold mb-2 text-white">Nom de l'événement</h3>
+                    <p class="text-gray-400 mb-2">Lieu, Ville | Date</p>
+                    <p class="text-gray-300">Description de l'événement : concert, festival, showcase...</p>
+                    <a href="#" class="mt-4 inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full shadow-lg transition-all transform hover:scale-105">
+                        Acheter des billets
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Section Management artistique -->
-        <section id="management" class="bg-zinc-900 py-20 px-6 container mx-auto rounded-xl shadow-2xl">
+        <!-- Section Actualités -->
+        <section id="news" class="bg-zinc-900 py-20 px-6 container mx-auto rounded-xl shadow-2xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
-                Management artistique
+                Actualités
             </h2>
-            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-                <div class="md:w-1/2 order-2 md:order-1">
-                    <img src="https://placehold.co/600x400/212121/FFFFFF?text=Management+Artistique" alt="Management Artistique" class="rounded-xl shadow-lg">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Nouvel album de l'artiste X</h3>
+                    <p class="text-gray-400 text-sm">Date de publication</p>
+                    <p class="text-gray-300 mt-2">L'artiste X vient de sortir son nouvel album, disponible sur toutes les plateformes...</p>
                 </div>
-                <div class="md:w-1/2 order-1 md:order-2">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">Développez votre carrière</h3>
-                    <p class="text-gray-300 mb-6">
-                        Nous offrons un management personnalisé pour aider les artistes à naviguer dans l'industrie musicale.
-                    </p>
-                    <ul class="list-disc list-inside text-gray-400 space-y-2">
-                        <li>Planification de la carrière et stratégie à long terme</li>
-                        <li>Négociation de contrats et de partenariats</li>
-                        <li>Conseils en marketing et image de marque</li>
-                    </ul>
+                <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Partenariat avec le studio Y</h3>
+                    <p class="text-gray-400 text-sm">Date de publication</p>
+                    <p class="text-gray-300 mt-2">Symphony Arts est fier d'annoncer un nouveau partenariat pour étendre nos services photo et vidéo...</p>
                 </div>
+                <div class="bg-zinc-800 rounded-xl p-6 shadow-xl transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold mb-2 text-white">Ouverture des soumissions</h3>
+                    <p class="text-gray-400 text-sm">Date de publication</p>
+                    <p class="text-gray-300 mt-2">Nous sommes à la recherche de nouveaux talents ! Les soumissions d'artistes sont officiellement ouvertes...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Nous rejoindre -->
+        <section id="rejoindre" class="py-20 px-6 container mx-auto">
+            <div class="bg-zinc-800 rounded-xl p-8 md:p-12 text-center shadow-2xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-gradient mb-4">Rejoignez-nous</h2>
+                <p class="text-lg text-gray-300 mb-6">
+                    Vous êtes un artiste ou un professionnel de l'industrie musicale ?
+                    Envoyez-nous votre candidature ou votre projet.
+                </p>
+                <a href="#contact" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-110">
+                    Déposer une candidature
+                </a>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="bg-zinc-900 py-20 px-6 container mx-auto rounded-xl shadow-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">
+                Contactez-nous
+            </h2>
+            <div class="max-w-xl mx-auto">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300">Nom complet</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md bg-zinc-800 border-zinc-700 text-white shadow-sm p-3 focus:ring-purple-500 focus:border-purple-500" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300">Adresse e-mail</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md bg-zinc-800 border-zinc-700 text-white shadow-sm p-3 focus:ring-purple-500 focus:border-purple-500" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md bg-zinc-800 border-zinc-700 text-white shadow-sm p-3 focus:ring-purple-500 focus:border-purple-500" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded-md text-white font-bold transition-all transform hover:scale-105">
+                        Envoyer le message
+                    </button>
+                    <div id="form-message" class="mt-4 text-center text-green-400 hidden">
+                        Message envoyé ! Nous vous répondrons sous peu.
+                    </div>
+                </form>
             </div>
         </section>
     </main>
@@ -172,6 +254,7 @@
     </footer>
 
     <script>
+        // Script pour le menu mobile
         const menuButton = document.getElementById('menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -179,11 +262,21 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Fermer le menu mobile lors d'un clic sur un lien
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+        function closeMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Script pour le formulaire de contact (simulation)
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formMessage.classList.remove('hidden');
+            contactForm.reset();
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
         });
     </script>
 </body>
