@@ -1,145 +1,163 @@
-/* ===== STYLES GLOBAUX ===== */
+/* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #0d0d0d;
-  color: #eaeaea;
+  font-family: 'Roboto', sans-serif;
+  background: #f9f9f9;
+  color: #222;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5 {
   font-weight: 700;
-  color: #ffffff;
+  color: #111;
 }
 
 p {
-  color: #cccccc;
+  color: #444;
 }
 
 a {
-  color: #00aaff;
+  color: #007BFF;
   text-decoration: none;
   transition: 0.3s;
 }
 a:hover {
-  color: #66d9ff;
+  color: #0056b3;
 }
 
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
               url("images/hero-bg.jpg") center/cover no-repeat;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero h1 {
   font-size: 3.5rem;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.6);
 }
+
+.hero p {
+  max-width: 700px;
+  margin: 20px auto;
+  font-size: 1.2rem;
+}
+
 .hero .btn-primary {
-  background: #00aaff;
+  background: #007BFF;
   border: none;
   padding: 12px 30px;
-  font-size: 1.2rem;
   border-radius: 30px;
   transition: 0.3s;
 }
 .hero .btn-primary:hover {
-  background: #0088cc;
-  transform: scale(1.05);
+  background: #0056b3;
+  transform: translateY(-3px);
 }
 
 /* ===== SECTIONS ===== */
 section {
   padding: 80px 0;
+  background: #fff;
 }
 
-#about {
-  background: #1a1a1a;
-}
-#about p {
-  color: #dddddd;
+section:nth-of-type(even) {
+  background: #f2f4f7; /* profondeur douce */
 }
 
-#services .card {
-  background: #141414;
+/* ===== SERVICES / CARTES ===== */
+.card {
   border: none;
   border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
   transition: 0.3s;
+  background: #fff;
 }
-#services .card:hover {
+.card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
-#services h4 {
-  color: #00aaff;
+.card h4 {
+  color: #007BFF;
+}
+.card p {
+  color: #555;
 }
 
 /* ===== PORTFOLIO ===== */
 #portfolio img {
   border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   transition: 0.4s;
 }
 #portfolio img:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 #portfolio h5 {
   margin-top: 15px;
-  color: #eaeaea;
+  color: #333;
 }
 
 /* ===== TÉMOIGNAGES ===== */
 blockquote {
-  background: #141414;
+  background: #ffffff;
   padding: 25px;
   border-radius: 12px;
   font-style: italic;
-  color: #cccccc;
-  border-left: 5px solid #00aaff;
+  color: #444;
+  border-left: 5px solid #007BFF;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
 blockquote:hover {
   transform: translateY(-5px);
-  background: #1f1f1f;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
 }
 
 /* ===== CONTACT ===== */
 #contact {
-  background: linear-gradient(135deg, #0d0d0d, #1f1f1f);
+  background: #f2f4f7;
 }
 #contact .btn-primary {
-  background: #00aaff;
+  background: #007BFF;
   border: none;
   border-radius: 30px;
   padding: 12px 30px;
   transition: 0.3s;
 }
 #contact .btn-primary:hover {
-  background: #0088cc;
-  transform: scale(1.05);
+  background: #0056b3;
+  transform: translateY(-3px);
 }
 
 /* ===== FOOTER ===== */
 footer {
-  background: #000000;
-  color: #888888;
+  background: #111;
+  color: #bbb;
   font-size: 0.9rem;
 }
 footer p {
   margin: 0;
-  color: #666666;
+  color: #999;
 }
 
-/* ===== ANIMATIONS ===== */
-.fade-in {
+/* ===== ANIMATIONS FADE-IN ===== */
+.fade-in-up {
   opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s forwards;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
