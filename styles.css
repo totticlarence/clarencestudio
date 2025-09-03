@@ -1,202 +1,253 @@
-/* ---------- Reset/Add Global Styles ---------- */
+/* ====== Global Styles ====== */
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f9f9f9;
+  background: #f9f9f9;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 a {
-  transition: color 0.3s ease;
+  color: #007bff;
+  text-decoration: none;
+  transition: 0.3s;
 }
 a:hover {
-  color: #007bff;
+  color: #0056b3;
 }
 
-/* ---------- Navigation (Navbar) ---------- */
+/* ====== Navbar ====== */
 .navbar {
-  background-color: #ffffff;
-  border-bottom: 2px solid #e7e7e7;
+  background: #fff;
+  border-bottom: 2px solid #eee;
+  transition: background 0.3s;
 }
-
-.navbar .navbar-nav .nav-link {
-  color: #555;
+.navbar-brand img {
+  height: 45px;
+}
+.navbar-nav > li > a {
+  padding: 15px;
   font-weight: 500;
+  color: #333;
 }
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-item.active .nav-link {
+.navbar-nav > li > a:hover,
+.navbar-nav > li.active > a {
   color: #007bff;
 }
 
-/* ---------- Hero Section ---------- */
-.hero {
-  background-color: #fff;
-  padding: 100px 0;
-  text-align: center;
+/* ====== Hero Banner ====== */
+#hero-banner {
+  background: url("images/banner-bg.jpg") no-repeat center center/cover;
+  color: #fff;
+  padding: 120px 0;
+  text-align: left;
 }
-.hero h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+#hero-banner h2 {
+  font-size: 2.5rem;
 }
-.hero .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-  padding: 10px 30px;
+#hero-banner p {
+  margin: 20px 0;
 }
-.hero .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+#hero-banner .btn {
+  padding: 12px 30px;
+  font-size: 1.1rem;
 }
 
-/* ---------- Section Headings ---------- */
-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  position: relative;
+/* ====== Hero Text ====== */
+#hero-text {
+  padding: 60px 0;
+  background: #fff;
 }
-section h2::after {
-  content: '';
+#hero-text h2 {
+  margin-bottom: 15px;
+}
+
+/* ====== Sections (Features, About, Services) ====== */
+.section-header {
+  margin-bottom: 50px;
+}
+.section-header h2 {
+  position: relative;
+  display: inline-block;
+}
+.section-header h2::after {
+  content: "";
   display: block;
   width: 60px;
   height: 3px;
-  background-color: #007bff;
+  background: #007bff;
   margin: 10px auto 0;
 }
-
-/* ---------- Services / Features Boxes ---------- */
-.services .service-box {
-  background-color: #ffffff;
-  border: 1px solid #eaeaea;
-  padding: 30px;
-  margin-bottom: 30px;
+.service-box {
+  background: #fff;
+  padding: 25px;
+  border: 1px solid #eee;
   border-radius: 6px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+  transition: 0.3s;
 }
-.services .service-box:hover {
+.service-box:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
-.services .service-box h4 {
-  margin-top: 15px;
-  font-size: 1.25rem;
+.service-box i {
+  font-size: 30px;
+  color: #007bff;
+  margin-right: 15px;
 }
 
-/* ---------- Portfolio / Work Section ---------- */
-.portfolio .project-item {
+/* ====== Portfolio ====== */
+.portfolio-filter {
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 0;
+}
+.portfolio-filter li {
+  display: inline-block;
+  margin: 0 10px;
+}
+.portfolio-filter a {
+  padding: 8px 15px;
+  border: 1px solid #007bff;
+  border-radius: 30px;
+}
+.portfolio-filter a.active,
+.portfolio-filter a:hover {
+  background: #007bff;
+  color: #fff;
+}
+.portfolio-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+.portfolio-item-inner {
   position: relative;
   overflow: hidden;
 }
-.portfolio .project-item img {
+.portfolio-item img {
   width: 100%;
-  transition: transform 0.4s ease;
+  transition: 0.4s;
 }
-.portfolio .project-item:hover img {
+.portfolio-item:hover img {
   transform: scale(1.1);
 }
-.portfolio .project-item .overlay {
+.portfolio-info {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.portfolio .project-item:hover .overlay {
-  opacity: 1;
-}
-.portfolio .project-item .overlay h3 {
+  right: 0;
+  background: rgba(0,123,255,0.85);
   color: #fff;
-  font-size: 1.5rem;
+  padding: 15px;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.portfolio-item:hover .portfolio-info {
+  transform: translateY(0);
 }
 
-/* ---------- Team Section ---------- */
-.team .team-member {
-  text-align: center;
-  margin-bottom: 40px;
+/* ====== Team ====== */
+.team-member {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+  margin-bottom: 30px;
 }
-.team .team-member img {
+.team-member:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+.team-img img {
   border-radius: 50%;
   width: 150px;
   height: 150px;
   object-fit: cover;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
-.team .team-member h5 {
-  font-size: 1.125rem;
-  margin-bottom: 5px;
-}
-.team .team-member p.role {
-  color: #777;
-  font-size: 0.95rem;
-}
-
-/* ---------- Pricing Table ---------- */
-.pricing .card {
-  border: none;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.pricing .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
-}
-.pricing .card .card-header {
-  background-color: #007bff;
-  color: #fff;
-  padding: 20px;
-  font-size: 1.5rem;
-}
-.pricing .card ul {
+.social-icons {
   list-style: none;
-  padding: 20px;
+  padding: 0;
+  margin-top: 15px;
 }
-.pricing .card ul li {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
+.social-icons li {
+  display: inline-block;
+  margin: 0 5px;
 }
-.pricing .card .btn {
-  margin: 20px;
+.social-icons a {
+  color: #007bff;
+  font-size: 18px;
 }
 
-/* ---------- Testimonial Section ---------- */
-.testimonial {
-  background-color: #eef2f6;
+/* ====== Business Stats ====== */
+#business-stats {
+  background: #007bff;
+  color: #fff;
   padding: 60px 0;
 }
-.testimonial blockquote {
+#business-stats strong {
+  display: block;
+  margin-top: 10px;
   font-size: 1.2rem;
-  color: #555;
-  position: relative;
-  padding-left: 40px;
-}
-.testimonial blockquote::before {
-  content: '“';
-  font-size: 3rem;
-  color: #007bff;
-  position: absolute;
-  left: 0;
-  top: -10px;
 }
 
-/* ---------- Contact / Footer ---------- */
-footer {
-  background-color: #222;
-  color: #aaa;
-  padding: 40px 0;
+/* ====== Pricing ====== */
+.pricing {
+  list-style: none;
+  padding: 0;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+  transition: 0.3s;
 }
-footer a {
-  color: #ddd;
+.pricing:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
 }
-footer a:hover {
+.pricing .plan-header {
+  background: #007bff;
   color: #fff;
+  padding: 20px;
 }
-footer .contact-info p {
-  margin-bottom: 10px;
+.pricing .price {
+  font-size: 2rem;
+  display: block;
+}
+.pricing li {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+.pricing .plan-purchase {
+  background: #f9f9f9;
 }
 
+/* ====== Testimonial ====== */
+.testimonial-area {
+  background: #f5f5f5;
+  padding: 60px 0;
+}
+.single-testimonial {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.single-testimonial blockquote {
+  font-size: 1rem;
+  color: #555;
+  border-left: 4px solid #007bff;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+.single-testimonial img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
