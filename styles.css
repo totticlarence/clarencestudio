@@ -1,253 +1,145 @@
-/* ====== Global Styles ====== */
+/* ===== STYLES GLOBAUX ===== */
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: #f9f9f9;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #0d0d0d;
+  color: #eaeaea;
+  line-height: 1.7;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   font-weight: 700;
-  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+p {
+  color: #cccccc;
 }
 
 a {
-  color: #007bff;
+  color: #00aaff;
   text-decoration: none;
   transition: 0.3s;
 }
 a:hover {
-  color: #0056b3;
+  color: #66d9ff;
 }
 
-/* ====== Navbar ====== */
-.navbar {
-  background: #fff;
-  border-bottom: 2px solid #eee;
-  transition: background 0.3s;
-}
-.navbar-brand img {
-  height: 45px;
-}
-.navbar-nav > li > a {
-  padding: 15px;
-  font-weight: 500;
-  color: #333;
-}
-.navbar-nav > li > a:hover,
-.navbar-nav > li.active > a {
-  color: #007bff;
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+              url("images/hero-bg.jpg") center/cover no-repeat;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
-/* ====== Hero Banner ====== */
-#hero-banner {
-  background: url("images/banner-bg.jpg") no-repeat center center/cover;
-  color: #fff;
-  padding: 120px 0;
-  text-align: left;
+.hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
 }
-#hero-banner h2 {
-  font-size: 2.5rem;
-}
-#hero-banner p {
-  margin: 20px 0;
-}
-#hero-banner .btn {
+.hero .btn-primary {
+  background: #00aaff;
+  border: none;
   padding: 12px 30px;
-  font-size: 1.1rem;
-}
-
-/* ====== Hero Text ====== */
-#hero-text {
-  padding: 60px 0;
-  background: #fff;
-}
-#hero-text h2 {
-  margin-bottom: 15px;
-}
-
-/* ====== Sections (Features, About, Services) ====== */
-.section-header {
-  margin-bottom: 50px;
-}
-.section-header h2 {
-  position: relative;
-  display: inline-block;
-}
-.section-header h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #007bff;
-  margin: 10px auto 0;
-}
-.service-box {
-  background: #fff;
-  padding: 25px;
-  border: 1px solid #eee;
-  border-radius: 6px;
-  margin-bottom: 30px;
+  font-size: 1.2rem;
+  border-radius: 30px;
   transition: 0.3s;
 }
-.service-box:hover {
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transform: translateY(-5px);
-}
-.service-box i {
-  font-size: 30px;
-  color: #007bff;
-  margin-right: 15px;
+.hero .btn-primary:hover {
+  background: #0088cc;
+  transform: scale(1.05);
 }
 
-/* ====== Portfolio ====== */
-.portfolio-filter {
-  list-style: none;
-  margin: 0 0 40px;
-  padding: 0;
+/* ===== SECTIONS ===== */
+section {
+  padding: 80px 0;
 }
-.portfolio-filter li {
-  display: inline-block;
-  margin: 0 10px;
+
+#about {
+  background: #1a1a1a;
 }
-.portfolio-filter a {
-  padding: 8px 15px;
-  border: 1px solid #007bff;
-  border-radius: 30px;
+#about p {
+  color: #dddddd;
 }
-.portfolio-filter a.active,
-.portfolio-filter a:hover {
-  background: #007bff;
-  color: #fff;
+
+#services .card {
+  background: #141414;
+  border: none;
+  border-radius: 16px;
+  transition: 0.3s;
 }
-.portfolio-item {
-  position: relative;
-  margin-bottom: 30px;
+#services .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
-.portfolio-item-inner {
-  position: relative;
-  overflow: hidden;
+#services h4 {
+  color: #00aaff;
 }
-.portfolio-item img {
-  width: 100%;
+
+/* ===== PORTFOLIO ===== */
+#portfolio img {
+  border-radius: 12px;
   transition: 0.4s;
 }
-.portfolio-item:hover img {
-  transform: scale(1.1);
+#portfolio img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
-.portfolio-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,123,255,0.85);
-  color: #fff;
-  padding: 15px;
-  transform: translateY(100%);
-  transition: 0.3s;
-}
-.portfolio-item:hover .portfolio-info {
-  transform: translateY(0);
-}
-
-/* ====== Team ====== */
-.team-member {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  transition: 0.3s;
-  margin-bottom: 30px;
-}
-.team-member:hover {
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transform: translateY(-5px);
-}
-.team-img img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-.social-icons {
-  list-style: none;
-  padding: 0;
+#portfolio h5 {
   margin-top: 15px;
-}
-.social-icons li {
-  display: inline-block;
-  margin: 0 5px;
-}
-.social-icons a {
-  color: #007bff;
-  font-size: 18px;
+  color: #eaeaea;
 }
 
-/* ====== Business Stats ====== */
-#business-stats {
-  background: #007bff;
-  color: #fff;
-  padding: 60px 0;
-}
-#business-stats strong {
-  display: block;
-  margin-top: 10px;
-  font-size: 1.2rem;
-}
-
-/* ====== Pricing ====== */
-.pricing {
-  list-style: none;
-  padding: 0;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  background: #fff;
-  text-align: center;
+/* ===== TÉMOIGNAGES ===== */
+blockquote {
+  background: #141414;
+  padding: 25px;
+  border-radius: 12px;
+  font-style: italic;
+  color: #cccccc;
+  border-left: 5px solid #00aaff;
   transition: 0.3s;
 }
-.pricing:hover {
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+blockquote:hover {
   transform: translateY(-5px);
-}
-.pricing .plan-header {
-  background: #007bff;
-  color: #fff;
-  padding: 20px;
-}
-.pricing .price {
-  font-size: 2rem;
-  display: block;
-}
-.pricing li {
-  padding: 12px;
-  border-bottom: 1px solid #eee;
-}
-.pricing .plan-purchase {
-  background: #f9f9f9;
+  background: #1f1f1f;
 }
 
-/* ====== Testimonial ====== */
-.testimonial-area {
-  background: #f5f5f5;
-  padding: 60px 0;
+/* ===== CONTACT ===== */
+#contact {
+  background: linear-gradient(135deg, #0d0d0d, #1f1f1f);
 }
-.single-testimonial {
-  background: #fff;
-  padding: 20px;
-  border-radius: 6px;
-  margin-bottom: 30px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+#contact .btn-primary {
+  background: #00aaff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  transition: 0.3s;
 }
-.single-testimonial blockquote {
-  font-size: 1rem;
-  color: #555;
-  border-left: 4px solid #007bff;
-  padding-left: 15px;
-  margin-bottom: 20px;
+#contact .btn-primary:hover {
+  background: #0088cc;
+  transform: scale(1.05);
 }
-.single-testimonial img {
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
+
+/* ===== FOOTER ===== */
+footer {
+  background: #000000;
+  color: #888888;
+  font-size: 0.9rem;
+}
+footer p {
+  margin: 0;
+  color: #666666;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
